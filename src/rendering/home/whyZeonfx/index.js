@@ -8,6 +8,8 @@ const Spreads = '/assets/images/Spreads.png';
 const Execution = '/assets/images/execution.png';
 const Markets = '/assets/images/markets.png';
 const Web = '/assets/images/web.png';
+const Safety = '/assets/images/safety.png';
+const Protected = '/assets/images/protected.png';
 
 const whyData = [
     {
@@ -33,23 +35,24 @@ const whyData = [
     {
         title: "Trader safety",
         description: "Negative balance protection on every account, so your balance can never fall below zero, plus Trade Guard risk controls.",
-        image: Web
+        image: Safety
     },
     {
         title: "Funds protected:",
         description: "Client funds held in segregated accounts, kept separate from company operating capital.",
-        image: Web
+        image: Protected
     }
 ];
 
 export default function WhyZeonfx() {
     return (
         <div className={styles.whyZeonfx}>
+            <div className={styles.videosize}>
+                <video src={AboutZeonfx} alt="AboutZeonfx" autoPlay muted loop></video>
+            </div>
             <div className='container'>
                 <div className={styles.grid}>
-                    <div className={styles.items}>
-                        <video src={AboutZeonfx} alt="AboutZeonfx" autoPlay muted loop></video>
-                    </div>
+
                     <div className={styles.items}>
                         <ButtonText text="Why zeonfx" />
                         <h2>
@@ -62,7 +65,14 @@ export default function WhyZeonfx() {
                                 transition={{ ease: "linear", duration: 30, repeat: Infinity }}
                             >
                                 {[...whyData, ...whyData].map((item, index) => (
-                                    <div className={styles.box} key={index}>
+                                    <motion.div
+                                        className={styles.box}
+                                        key={index}
+                                        whileHover={{
+                                            boxShadow: '0 0 1px rgba(20, 158, 245, 0.4)',
+                                            transition: { duration: 0.3, ease: 'easeOut' }
+                                        }}
+                                    >
                                         <div className={styles.inner}>
                                             <div className={styles.text}>
                                                 <h3>{item.title}</h3>
@@ -72,7 +82,7 @@ export default function WhyZeonfx() {
                                                 <img src={item.image} alt={item.title} />
                                             </div>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 ))}
                             </motion.div>
                         </div>

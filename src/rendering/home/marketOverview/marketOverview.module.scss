@@ -2,6 +2,21 @@
 @use '../../../scss/breakpoints/breakpoints.scss' as *;
 @use '../../../scss/font/font.scss' as *;
 
+@property --border-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes rotateBorderAngle {
+    0% {
+        --border-angle: 0deg;
+    }
+    100% {
+        --border-angle: 360deg;
+    }
+}
+
 .marketOverview {
     padding: 150px 0;
     position: relative;
@@ -213,18 +228,62 @@
             }
         }
 
-
         &::before {
             content: "";
             position: absolute;
             inset: 0;
             border-radius: inherit;
-            padding: 1px;
+            padding: 1.5px;
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0) 100%);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
             pointer-events: none;
+            transition: background 0.35s ease, opacity 0.35s ease;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            padding: 2px;
+            background: conic-gradient(
+                from var(--border-angle),
+                transparent 0deg,
+                rgba(20, 158, 245, 0.3) 140deg,
+                #149EF5 180deg,
+                rgba(20, 158, 245, 0.3) 220deg,
+                transparent 360deg
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            filter: blur(10px);
+            opacity: 0;
+            pointer-events: none;
+            animation: rotateBorderAngle 4s linear infinite;
+            transition: opacity 0.35s ease, filter 0.35s ease;
+        }
+
+        &:hover {
+            &::before {
+                background: conic-gradient(
+                    from var(--border-angle),
+                    rgba(255, 255, 255, 0.08) 0deg,
+                    rgba(20, 158, 245, 0.3) 120deg,
+                    #149EF5 180deg,
+                    #60C5FF 200deg,
+                    rgba(20, 158, 245, 0.3) 240deg,
+                    rgba(255, 255, 255, 0.08) 360deg
+                );
+                animation: rotateBorderAngle 4s linear infinite;
+            }
+
+            &::after {
+                opacity: 1;
+                filter: blur(14px);
+            }
         }
     }
 }

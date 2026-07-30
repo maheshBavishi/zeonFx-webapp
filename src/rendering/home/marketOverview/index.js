@@ -26,7 +26,11 @@ export default function MarketOverview() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
-                        whileHover={{ y: -5 }}
+                        whileHover={{
+                            y: -6,
+                            boxShadow: '0 0 20px rgba(20, 158, 245, 0.35)',
+                            transition: { duration: 0.3, ease: 'easeOut' }
+                        }}
                         transition={{ duration: 0.5 }}
                     >
                         <video src={Indices} alt="Indices" loop muted autoPlay playsInline></video>
@@ -45,7 +49,11 @@ export default function MarketOverview() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
-                        whileHover={{ y: -5 }}
+                        whileHover={{
+                            y: -6,
+                            boxShadow: '0 0 20px rgba(20, 158, 245, 0.35)',
+                            transition: { duration: 0.3, ease: 'easeOut' }
+                        }}
                         transition={{ duration: 0.5, delay: 0.1 }}
                     >
                         <motion.img
@@ -70,7 +78,11 @@ export default function MarketOverview() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
-                        whileHover={{ y: -5 }}
+                        whileHover={{
+                            y: -6,
+                            boxShadow: '0 0 20px rgba(20, 158, 245, 0.35)',
+                            transition: { duration: 0.3, ease: 'easeOut' }
+                        }}
                         transition={{ duration: 0.5 }}
                     >
                         <div className={styles.sectext}>
@@ -91,7 +103,11 @@ export default function MarketOverview() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
-                        whileHover={{ y: -5 }}
+                        whileHover={{
+                            y: -6,
+                            boxShadow: '0 0 20px rgba(20, 158, 245, 0.35)',
+                            transition: { duration: 0.3, ease: 'easeOut' }
+                        }}
                         transition={{ duration: 0.5, delay: 0.1 }}
                     >
                         <div className={styles.sectext}>
@@ -114,7 +130,11 @@ export default function MarketOverview() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
-                        whileHover={{ y: -5 }}
+                        whileHover={{
+                            y: -6,
+                            boxShadow: '0 0 20px rgba(20, 158, 245, 0.35)',
+                            transition: { duration: 0.3, ease: 'easeOut' }
+                        }}
                         transition={{ duration: 0.5 }}
                     >
                         <video className={styles.Crypto} src={Crypto} alt="Crypto" loop autoPlay muted playsInline></video>
@@ -133,7 +153,11 @@ export default function MarketOverview() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
-                        whileHover={{ y: -5 }}
+                        whileHover={{
+                            y: -6,
+                            boxShadow: '0 0 20px rgba(20, 158, 245, 0.35)',
+                            transition: { duration: 0.3, ease: 'easeOut' }
+                        }}
                         transition={{ duration: 0.5, delay: 0.1 }}
                     >
                         <video className={styles.Stocks} src={Stocks} alt="Stocks" loop autoPlay muted playsInline></video>

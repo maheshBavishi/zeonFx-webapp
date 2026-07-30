@@ -1,0 +1,13 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.tradingOpportunities {
+    padding: 80px 0;
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 434px;
+        gap: 160px;
+    }
+}

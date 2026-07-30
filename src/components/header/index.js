@@ -1,6 +1,6 @@
 'use client'
-import React from 'react'
-import { motion } from 'framer-motion';
+import React, { useState, useRef } from 'react'
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import styles from './header.module.scss';
 import Button from '../button';
 
@@ -63,8 +63,40 @@ function FlipLink({ children }) {
 }
 
 export default function Header() {
+    const { scrollY } = useScroll();
+    const [hidden, setHidden] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const lastScrollY = useRef(0);
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        const previous = lastScrollY.current;
+        const diff = latest - previous;
+
+        if (latest > 100 && diff > 8) {
+            setHidden(true);
+        } else if (diff < -8 || latest <= 100) {
+            setHidden(false);
+        }
+
+        if (latest > 20) {
+            setScrolled(true);
+        } else {
+            setScrolled(false);
+        }
+
+        lastScrollY.current = latest;
+    });
+
     return (
-        <header className={styles.header}>
+        <motion.header
+            className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}
+            variants={{
+                visible: { y: 0 },
+                hidden: { y: "-140%" },
+            }}
+            animate={hidden ? "hidden" : "visible"}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+        >
             <div className='container'>
                 <div className={styles.headerDesign}>
                     <img src={Logo} alt='Logo' />
@@ -79,7 +111,8 @@ export default function Header() {
                     </div>
                 </div>
             </div>
-        </header>
-    )
+        </motion.header>
+    );
 }
+
 
