@@ -1,0 +1,228 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.forexZeonfx {
+    padding: 150px 0;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        position: absolute;
+        max-width: 1300px;
+        width: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        content: '';
+        border-radius: 50%;
+        opacity: 0.4;
+        background: var(--Logo-Blue, linear-gradient(180deg, #149EF5 3.23%, #057FDA 38.93%, #046FC9 66.97%));
+        filter: blur(150px);
+        height: 100px;
+    }
+
+    :global(.container) {
+        position: relative;
+        z-index: 1;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+
+    h2 {
+        color: #FFF;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 105%;
+        text-transform: capitalize;
+        margin: 16px 0 60px 0;
+        text-align: center;
+
+        span {
+            @include text-gradient;
+        }
+    }
+
+    /* ── Slider layout ─────────────────────────────────────── */
+
+    .sliderOuter {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    /* Viewport: JS handles all scrollLeft — hide native scrollbar */
+    .viewport {
+        overflow: hidden;
+        /* JS sets scrollLeft directly, no native scroll */
+        cursor: grab;
+
+        &:active {
+            cursor: grabbing;
+        }
+    }
+
+    /* Track: single row of all cards */
+    .track {
+        display: flex;
+        gap: 20px;
+        width: max-content;
+        user-select: none;
+        /* prevent text highlight during drag */
+    }
+
+    /* ── Card ────────────────────────────────────────────── */
+
+    .box {
+        flex: 0 0 calc((min(100vw - 40px, 1240px) - 60px) / 4);
+        width: calc((min(100vw - 40px, 1240px) - 60px) / 4);
+        position: relative;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.04);
+        padding: 10px;
+
+
+        /* gradient border mask */
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .inner {
+            height: 100%;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            transition: border-color 0.3s ease, background 0.3s ease;
+
+            &:hover {
+                border-color: rgba(20, 158, 245, 0.3);
+                background: rgba(20, 158, 245, 0.04);
+            }
+
+            .text {
+                padding: 20px 20px 0 20px;
+
+                h3 {
+                    margin: 0 0 16px 0;
+                    color: #FFF;
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 110%;
+                }
+
+                p {
+                    color: var(--Text-Secondary, #8E8E8E);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 110%;
+                }
+            }
+
+            .image {
+
+                img {
+                    display: block;
+                    width: 100%;
+                    transition: transform 0.35s ease;
+                }
+
+                &:hover img {
+                    transform: scale(1.04);
+                }
+            }
+        }
+    }
+
+    /* ── Arrows — absolute left / right of viewport ─────── */
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        /* vertically centred on the card area only (exclude dots height ~56px below) */
+        transform: translateY(calc(-50% - 28px));
+        z-index: 10;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(14, 14, 14, 0.85);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #fff;
+        outline: none;
+        transition: border-color 0.25s ease, background 0.25s ease, opacity 0.25s ease;
+
+        &:hover {
+            border-color: rgba(20, 158, 245, 0.5);
+            background: rgba(20, 158, 245, 0.12);
+        }
+
+        svg {
+            display: block;
+        }
+    }
+
+    .arrowLeft {
+        left: -22px;
+    }
+
+    .arrowRight {
+        right: -22px;
+    }
+
+    .arrowDisabled {
+        opacity: 0.28;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    /* ── Dots ────────────────────────────────────────────── */
+
+    .dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 99px;
+        border: none;
+        background: rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        padding: 0;
+        outline: none;
+        transition: width 0.3s ease, background 0.3s ease;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    .dotActive {
+        width: 28px;
+        background: #149EF5;
+    }
+}

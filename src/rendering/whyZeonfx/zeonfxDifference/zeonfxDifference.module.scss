@@ -1,0 +1,122 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.zeonfxDifference {
+    background-image: url('/assets/images/banner1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 150px 0;
+    overflow: hidden;
+    position: relative;
+    background-position: top;
+
+    &::before {
+        position: absolute;
+        max-width: 1300px;
+        width: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        content: '';
+        border-radius: 1310px;
+        border-radius: 50%;
+        opacity: 0.4;
+        background: var(--Logo-Blue, linear-gradient(180deg, #149EF5 3.23%, #057FDA 38.93%, #046FC9 66.97%));
+        filter: blur(150px);
+        height: 100px;
+    }
+
+    :global(.container) {
+        position: relative;
+        z-index: 1;
+    }
+
+    h2 {
+        color: #FFF;
+        font-size: 48px;
+        margin: 16px 0 60px 0;
+        font-weight: 600;
+        line-height: 105%;
+        text-transform: capitalize;
+
+        span {
+            @include text-gradient;
+        }
+    }
+
+    .grid {
+        max-width: 888px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+
+        .items {
+            position: relative;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 10px;
+
+            &:nth-child(2) {
+                .inner {
+                    .image {
+                        padding: 0;
+                    }
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                border-radius: 24px;
+                padding: 1px;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0) 100%);
+                -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+                pointer-events: none;
+            }
+
+            .inner {
+                height: 100%;
+                border-radius: 16px;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 20px;
+                background: rgba(255, 255, 255, 0.02);
+
+                .text {
+                    padding: 20px 20px 0 20px;
+
+                    h3 {
+                        margin: 0 0 16px 0;
+                        color: #FFF;
+                        font-size: 20px;
+                        font-weight: 600;
+                        line-height: 110%;
+                    }
+
+                    p {
+                        color: var(--Text-Secondary, #8E8E8E);
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 110%;
+                    }
+                }
+
+                .image {
+                    padding: 0 20px;
+
+                    img {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

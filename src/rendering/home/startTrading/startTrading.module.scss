@@ -1,0 +1,143 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.startTrading {
+    padding: 150px 0;
+    position: relative;
+
+    .townImage {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        img {
+            max-width: 1500px;
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .sectionheader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0 80px 0;
+
+        .btnAlignment {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .img {
+            height: 220px;
+
+            img {
+                object-fit: contain;
+                display: block;
+                max-width: 265px;
+            }
+        }
+
+        h2 {
+            color: var(--Text-Primary, #FFF);
+            font-size: 48px;
+            max-width: 331px;
+            font-weight: 600;
+            line-height: 105%;
+            text-transform: capitalize;
+            margin: 16px 0 32px 0;
+
+            span {
+                @include text-gradient;
+            }
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        position: relative;
+        z-index: 1;
+
+        .items {
+            position: relative;
+            border-radius: 24px;
+            background: linear-gradient(180deg, rgba(20, 20, 20, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
+            box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 10px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                border-radius: inherit;
+                padding: 1px;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0) 100%);
+                -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+                pointer-events: none;
+            }
+
+            .inner {
+                border-radius: 16px;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                background: rgba(255, 255, 255, 0.02);
+                box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 110px;
+                justify-content: space-between;
+                height: 100%;
+                transition: background 0.5s ease;
+
+                &.active {
+                    background: linear-gradient(180deg, rgba(20, 158, 245, 0.20) 3.23%, rgba(4, 111, 201, 0.00) 59.92%), rgba(255, 255, 255, 0.02);
+
+                    h3 {
+                        @include text-gradient;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
+
+                span {
+                    display: block;
+                    color: var(--Text-Primary, #8E8E8E);
+                    font-size: 16px;
+                    font-weight: 600;
+                    padding: 0 0 8px 0;
+                    line-height: 110%;
+                }
+
+                h4 {
+                    color: #FFF;
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin: 0 0 16px 0;
+                    line-height: 110%;
+                }
+
+                p {
+                    color: #D5D5D5;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 110%;
+                }
+
+                h3 {
+                    color: #FFF;
+                    font-size: 40px;
+                    font-weight: 600;
+                    line-height: 110%;
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+    }
+}

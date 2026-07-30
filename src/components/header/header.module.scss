@@ -1,0 +1,67 @@
+@use '../../scss/main.scss' as *;
+@use '../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../scss/font/font.scss' as *;
+
+.header {
+    position: absolute;
+    top: 20px;
+    z-index: 9;
+    left: 0;
+    width: 100%;
+
+    .headerDesign {
+        border-radius: 14px;
+        padding: 16px 20px;
+        background: rgba(255, 255, 255, 0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .buttonAlignment {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 38px;
+
+            .flipLink {
+                display: block;
+                overflow: hidden;
+                position: relative;
+                cursor: pointer;
+                line-height: 105%;
+                font-size: 16px;
+                font-weight: 400;
+                @include font-normal;
+
+                .flipWrapper {
+                    position: relative;
+                    display: block;
+                    white-space: nowrap;
+
+                    .flipTextPrimary {
+                        display: block;
+                        color: #FFFFFF;
+                    }
+
+                    .flipTextSecondary {
+                        position: absolute;
+                        inset: 0;
+                        display: block;
+                        color: #149EF5;
+                    }
+                }
+            }
+        }
+
+        img {
+            max-width: 232px;
+            display: block;
+            cursor: pointer;
+        }
+    }
+}

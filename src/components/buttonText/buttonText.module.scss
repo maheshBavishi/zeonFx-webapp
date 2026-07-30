@@ -1,0 +1,21 @@
+@use '../../scss/main.scss' as *;
+@use '../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../scss/font/font.scss' as *;
+
+.buttonText {
+    button {
+        border: none;
+        color: #FFF;
+        text-align: center;
+        font-size: 12px;
+        padding: 8px 20px;
+        border-right: 2px solid var(--Logo-Blue, #149EF5);
+        border-left: 2px solid var(--Logo-Blue, #149EF5);
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 30%, rgba(255, 255, 255, 0.00) 70%, rgba(255, 255, 255, 0.10) 100%);
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 2.4px;
+        @include font-normal;
+        text-transform: uppercase;
+    }
+}

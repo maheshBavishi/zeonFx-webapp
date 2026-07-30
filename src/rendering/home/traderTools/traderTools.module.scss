@@ -1,0 +1,146 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.traderTools {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+        max-width: 550px;
+        content: '';
+        width: 100%;
+        height: 100%;
+        left: 0;
+    }
+
+    &::after {
+        position: absolute;
+        top: 0;
+        background: linear-gradient(-270deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+        max-width: 550px;
+        content: '';
+        width: 100%;
+        height: 100%;
+        right: 0;
+    }
+
+    video {
+        width: 100%;
+        height: 100dvh;
+        object-fit: cover;
+        display: block;
+    }
+
+    .contentAlignment {
+        display: flex;
+        align-items: center;
+        padding: 100px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .grid {
+            display: grid;
+            grid-template-columns: 280px 1fr 280px;
+            gap: 70px;
+            align-items: center;
+            width: 100%;
+
+            .items {
+                .centerButton {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .centerText {
+                    h2 {
+                        margin: 16px auto 32px auto;
+                        color: #FFF;
+                        font-size: 48px;
+                        font-weight: 600;
+                        line-height: 105%;
+                        text-transform: capitalize;
+                        max-width: 362px;
+
+                        span {
+                            @include text-gradient;
+                        }
+
+                    }
+
+                    p {
+                        color: var(--Text-Secondary, #8E8E8E);
+                        text-align: center;
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 110%;
+                    }
+                }
+
+                .box {
+                    position: relative;
+                    border-radius: 24px;
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0.20) 0%, rgba(102, 102, 102, 0.20) 100%), rgba(255, 255, 255, 0.10);
+                    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.35);
+                    padding: 10px;
+                    margin: 0 0 60px 0;
+
+                    &:last-child {
+                        margin: 0;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        border-radius: inherit;
+                        padding: 1px;
+                        background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+                        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                        -webkit-mask-composite: xor;
+                        mask-composite: exclude;
+                        pointer-events: none;
+                    }
+
+                    .inner {
+                        border-radius: 16px;
+                        border: 1px solid rgba(255, 255, 255, 0.05);
+                        background: rgba(255, 255, 255, 0.02);
+                        padding: 0 20px 20px 20px;
+                        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+
+                        h3 {
+                            color: #FFF;
+                            font-size: 20px;
+                            font-weight: 600;
+                            line-height: 110%;
+                            margin: 0 0 16px 0;
+                        }
+
+                        p {
+                            color: var(--Text-Primary, #FFF);
+                            font-size: 16px;
+                            font-weight: 400;
+                            line-height: 110%;
+                        }
+
+                        .centeralignment {
+                            display: flex;
+                            justify-content: center;
+
+                            img {
+                                max-width: 214px;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

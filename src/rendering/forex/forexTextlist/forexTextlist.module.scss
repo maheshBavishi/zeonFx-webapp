@@ -1,0 +1,43 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.forexTextlist {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 30px 0;
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0px;
+
+        .items {
+            position: relative;
+
+            &:last-child {
+                &::before {
+                    display: none;
+                }
+            }
+
+            &::before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 1px;
+                height: 100%;
+                content: '';
+                background: var(--Logo-Blue, linear-gradient(180deg, #149EF5 3.23%, #057FDA 38.93%, #046FC9 66.97%));
+            }
+
+
+            p {
+                color: #FFF;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 105%;
+                text-align: center;
+            }
+        }
+    }
+}

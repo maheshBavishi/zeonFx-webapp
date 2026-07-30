@@ -1,0 +1,182 @@
+@use '../../scss/main.scss' as *;
+@use '../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../scss/font/font.scss' as *;
+
+.footer {
+    padding: 150px 0 0 0;
+
+    .bottom {
+        padding: 80px 0 0 0;
+
+        img {
+            display: block;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.50);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 110%;
+            @include font-normal;
+            margin: 0 0 80px 0;
+        }
+    }
+
+    .footerTextList {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.30);
+        padding: 80px 0;
+
+        .text {
+            padding: 0 0 50px 0;
+
+            h3 {
+                color: #FFF;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 105%;
+                margin: 0 0 20px 0;
+                @include font-medium;
+            }
+
+            p {
+                color: rgba(255, 255, 255, 0.50);
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 110%;
+                @include font-normal;
+            }
+
+            &:last-child {
+                padding: 0;
+            }
+        }
+    }
+
+    .footerGrid {
+        display: grid;
+        grid-template-columns: 268px 1fr;
+        gap: 70px;
+        padding: 0 0 80px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.30);
+
+        .footerSecmenu {
+            display: flex;
+            gap: 70px;
+
+            h3 {
+                color: #FFF;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 105%;
+                margin: 0 0 16px 0;
+                @include font-medium;
+            }
+
+            a {
+                display: block;
+                color: rgba(255, 255, 255, 0.50);
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 110%;
+                padding: 0 0 16px 0;
+                @include font-normal;
+                cursor: pointer;
+                transition: color 0.3s cubic-bezier(0.25, 1, 0.5, 1), transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+                will-change: transform, color;
+
+                &:hover {
+                    color: #149EF5;
+                    transform: translateX(6px);
+                }
+
+                &:last-child {
+                    padding: 0 0 0 0;
+                }
+            }
+        }
+
+        .menuAlignment {
+            display: flex;
+            padding: 0 0 100px 0;
+            gap: 70px;
+            justify-content: flex-end;
+
+            h3 {
+                color: #FFF;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 105%;
+                margin: 0 0 16px 0;
+                @include font-medium;
+            }
+
+            a {
+                display: block;
+                color: rgba(255, 255, 255, 0.50);
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 110%;
+                padding: 0 0 16px 0;
+                @include font-normal;
+                cursor: pointer;
+                transition: color 0.3s cubic-bezier(0.25, 1, 0.5, 1), transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+                will-change: transform, color;
+
+                &:hover {
+                    color: #149EF5;
+                    transform: translateX(6px);
+                }
+
+                &:last-child {
+                    padding: 0 0 0 0;
+                }
+            }
+        }
+
+        .leftContent {
+            .socialAlignment {
+                display: flex;
+                align-items: center;
+                gap: 17px;
+
+                svg {
+                    cursor: pointer;
+                    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease;
+
+                    path {
+                        transition: fill 0.3s ease;
+                    }
+
+                    &:hover {
+                        transform: translateY(-4px) scale(1.1);
+                        filter: drop-shadow(0 4px 12px rgba(20, 158, 245, 0.5));
+
+                        path {
+                            fill: #149EF5;
+                        }
+                    }
+                }
+
+            }
+
+            p {
+                color: rgba(255, 255, 255, 0.50);
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 110%;
+                max-width: 268px;
+                @include font-normal;
+                margin: 0 0 20px 0;
+            }
+
+            h3 {
+                color: #FFF;
+                font-size: 16px;
+                margin: 0 0 20px 0;
+                font-weight: 500;
+                line-height: 105%;
+                @include font-medium;
+            }
+        }
+    }
+}

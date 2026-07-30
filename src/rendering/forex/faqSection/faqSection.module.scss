@@ -1,0 +1,122 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.faqSection {
+    padding: 150px 0;
+
+    .grid {
+        display: grid;
+        grid-template-columns: 500px 1fr;
+        gap: 160px;
+
+        .items {
+            h2 {
+                color: #FFF;
+                font-size: 48px;
+                font-weight: 600;
+                line-height: 105%;
+                margin: 16px 0 40px 0;
+                text-transform: capitalize;
+
+                span {
+                    @include text-gradient;
+                }
+            }
+
+            /* ── FAQ list ─────────────────────────────── */
+
+            .allFaq {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .faq {
+                border-radius: 16px;
+                padding: 16px 24px;
+                position: relative;
+                background: rgba(255, 255, 255, 0.04);
+                cursor: pointer;
+                transition: background 0.3s ease;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.07);
+                }
+
+                &.faqOpen {
+                    background: rgba(20, 158, 245, 0.06);
+
+                    .faqheader .icon {
+                        background: rgba(20, 158, 245, 0.2);
+                    }
+                }
+
+                /* gradient border */
+                &::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    border-radius: 16px;
+                    padding: 1px;
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0) 100%);
+                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    pointer-events: none;
+                }
+
+                .faqheader {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 16px;
+
+                    h3 {
+                        color: #FFF;
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 110%;
+                    }
+
+                    .icon {
+                        width: 44px;
+                        height: 44px;
+                        flex-shrink: 0;
+                        border-radius: 10px;
+                        background: rgba(255, 255, 255, 0.10);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: background 0.3s ease;
+                    }
+                }
+
+                /* Answer revealed by Framer Motion */
+                .faqAnswer {
+                    overflow: hidden;
+
+                    p {
+                        padding-top: 14px;
+                        color: rgba(255, 255, 255, 0.55);
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 160%;
+                        margin: 0;
+                    }
+                }
+            }
+
+            .img {
+                padding: 100px 0 0 0;
+
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+
+}

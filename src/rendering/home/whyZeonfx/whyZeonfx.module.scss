@@ -1,0 +1,127 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.whyZeonfx {
+    padding: 0 0 150px 0;
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 656px;
+        gap: 40px;
+
+        .items {
+            &:last-child {
+                padding: 150px 0 0 0;
+            }
+
+            video {
+                display: block;
+                width: 100%;
+            }
+
+            .allBoxAlignment {
+                display: flex;
+                gap: 24px;
+                overflow: hidden;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 200px;
+                    height: 100%;
+                    background: linear-gradient(270deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
+                    pointer-events: none;
+                    z-index: 2;
+                }
+
+                .box {
+                    border-radius: 24px;
+                    background: rgba(255, 255, 255, 0.04);
+                    position: relative;
+                    padding: 10px;
+                    width: 280px;
+                    min-width: 280px;
+                    max-width: 280px;
+
+                    &:nth-child(2) {
+                        .inner {
+                            .image {
+                                padding: 0;
+                            }
+                        }
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        border-radius: 24px;
+                        padding: 1px;
+                        background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0) 100%);
+                        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                        -webkit-mask-composite: xor;
+                        mask-composite: exclude;
+                        pointer-events: none;
+                    }
+
+                    .inner {
+                        border-radius: 16px;
+                        border: 1px solid rgba(255, 255, 255, 0.05);
+                        background: rgba(255, 255, 255, 0.02);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 100%;
+                        gap: 20px;
+
+                        .image {
+                            padding: 0 20px;
+
+                            img {
+                                display: block;
+                                width: 100%;
+                            }
+                        }
+
+                        .text {
+                            padding: 20px 20px 0 20px;
+
+
+                            h3 {
+                                color: #FFF;
+                                font-size: 20px;
+                                font-weight: 600;
+                                line-height: 110%;
+                                margin: 0 0 16px 0;
+                            }
+
+                            p {
+                                color: var(--Text-Secondary, #8E8E8E);
+                                font-size: 16px;
+                                font-weight: 400;
+                                line-height: 110%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            h2 {
+                color: #FFF;
+                font-size: 48px;
+                font-weight: 600;
+                line-height: 105%;
+                margin: 16px 0 60px 0;
+                text-transform: capitalize;
+
+                span {
+                    @include text-gradient;
+                }
+            }
+        }
+    }
+}

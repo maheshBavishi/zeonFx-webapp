@@ -1,0 +1,66 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.financialMarket {
+    padding: 100px 0;
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 504px;
+        gap: 90px;
+        align-items: center;
+
+        .items {
+            p {
+                color: #FFF;
+                font-size: 16px;
+                max-width: 585px;
+                font-weight: 400;
+                line-height: 105%;
+                margin: 0 0 20px 0;
+            }
+
+            h2 {
+                color: #FFF;
+                font-size: 48px;
+                font-weight: 600;
+                line-height: 105%;
+                margin: 16px 0 40px 0;
+                max-width: 434px;
+                text-transform: capitalize;
+
+                span {
+                    @include text-gradient;
+                }
+            }
+
+            .img {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .glow {
+                    position: absolute;
+                    inset: 10%;
+                    border-radius: 50%;
+                    background: radial-gradient(circle,
+                            rgba(99, 179, 237, 0.35) 0%,
+                            rgba(66, 108, 245, 0.18) 50%,
+                            transparent 75%);
+                    filter: blur(32px);
+                    pointer-events: none;
+                    z-index: 0;
+                }
+
+                img {
+                    display: block;
+                    width: 100%;
+                    position: relative;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@use '../../scss/main.scss' as *;
+@use '../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../scss/font/font.scss' as *;
+
+.button {
+    &.primary {
+        button {
+            background: linear-gradient(180deg, #149EF5 3.23%, #057FDA 38.93%, #046FC9 66.97%);
+            color: #fff;
+        }
+    }
+
+    &.outline {
+        button {
+            border: 2px solid #FFF;
+            color: #fff;
+            background: transparent;
+
+            &:hover {
+                background: #fff;
+                color: #000;
+            }
+        }
+    }
+
+    button {
+        border-radius: 10px;
+        background: linear-gradient(180deg, #FFF 0%, #CCC 100%);
+        padding: 20px;
+        border: none;
+        cursor: pointer;
+        color: #000;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 105%;
+        text-transform: uppercase;
+        @include font-semibold;
+    }
+}

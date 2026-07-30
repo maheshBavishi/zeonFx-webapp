@@ -1,0 +1,71 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.tradeGuard {
+    position: relative;
+    padding: 0 0 80px 0;
+
+    video {
+        width: 100%;
+        display: block;
+        object-position: right;
+    }
+
+
+    .content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        z-index: 9;
+        left: 0;
+
+        p {
+            color: var(--Text-Secondary, #8E8E8E);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 110%;
+            margin: 0 0 40px 0;
+            max-width: 524px;
+
+        }
+
+        .allIconText {
+            padding: 0 0 40px 0;
+
+            .iconText {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 0 0 12px 0;
+
+                &:last-child {
+                    padding: 0;
+                }
+
+                span {
+                    color: var(--Text-Primary, #FFF);
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 110%;
+                }
+            }
+        }
+
+        h2 {
+            color: #FFF;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 105%;
+            margin: 16px 0 40px 0;
+            max-width: 389px;
+            text-transform: capitalize;
+
+            span {
+                @include text-gradient;
+            }
+        }
+
+    }
+}

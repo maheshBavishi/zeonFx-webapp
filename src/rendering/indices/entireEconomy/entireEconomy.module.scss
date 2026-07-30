@@ -1,0 +1,42 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.entireEconomy {
+    padding: 150px 0;
+
+    .grid {
+        display: grid;
+        grid-template-columns: 528px 1fr;
+        gap: 58px;
+
+        .image {
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        p {
+            color: #FFF;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 105%;
+            max-width: 645px;
+            margin: 0 0 20px 0;
+        }
+
+        h2 {
+            color: #FFF;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 105%;
+            margin: 16px 0 40px 0;
+            text-transform: capitalize;
+
+            span {
+                @include text-gradient;
+            }
+        }
+    }
+}
