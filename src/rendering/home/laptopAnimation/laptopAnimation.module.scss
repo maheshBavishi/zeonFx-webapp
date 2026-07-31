@@ -78,7 +78,17 @@
         margin-top: 32px;
         position: relative;
         z-index: 10;
+    }
 
+    @include respond-to("xl") {
+        .laptopWrapper {
+            width: 800px;
+            max-width: 85vw;
+        }
 
+        .buttonCenter {
+            margin-top: 24px;
+            gap: 12px;
+        }
     }
 }

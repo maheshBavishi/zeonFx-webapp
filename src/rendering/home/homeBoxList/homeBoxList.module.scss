@@ -85,4 +85,33 @@
             }
         }
     }
+
+    @include respond-to("xl") {
+        padding: 100px 0;
+
+        .box {
+            padding: 0 50px;
+            grid-template-columns: 400px 1fr;
+            gap: 40px;
+            margin: 0 0 40px 0;
+
+            &:last-child {
+                grid-template-columns: 1fr 400px;
+            }
+
+            .text {
+                padding: 60px 0;
+            }
+
+            h2 {
+                font-size: 40px;
+                margin: 14px 0 24px 0;
+            }
+
+            p {
+                margin: 0 0 24px 0;
+                font-size: 15px;
+            }
+        }
+    }
 }

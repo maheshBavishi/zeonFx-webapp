@@ -144,4 +144,44 @@
             }
         }
     }
+
+    @include respond-to("xl") {
+        .contentAlignment {
+            .grid {
+                grid-template-columns: 240px 1fr 240px;
+                gap: 40px;
+
+                .items {
+                    .centerText {
+                        h2 {
+                            font-size: 40px;
+                            margin: 14px auto 24px auto;
+                            max-width: 320px;
+                        }
+
+                        p {
+                            font-size: 15px;
+                        }
+                    }
+
+                    .box {
+                        margin: 0 0 30px 0;
+
+                        .inner {
+                            padding: 0 16px 16px 16px;
+
+                            h3 {
+                                font-size: 18px;
+                                margin: 0 0 12px 0;
+                            }
+
+                            p {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

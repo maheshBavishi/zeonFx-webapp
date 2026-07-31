@@ -57,4 +57,25 @@
             }
         }
     }
+
+    @include respond-to("xl") {
+        .contentAlignment {
+            top: 55%;
+
+            h1 {
+                font-size: 56px;
+                margin: 20px 0;
+                max-width: 550px;
+            }
+
+            p {
+                font-size: 15px;
+                max-width: 650px;
+            }
+
+            .buttonAlignment {
+                padding: 20px 0 0 0;
+            }
+        }
+    }
 }

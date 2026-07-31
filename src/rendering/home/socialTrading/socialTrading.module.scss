@@ -91,4 +91,23 @@
             justify-content: center;
         }
     }
+
+    @include respond-to("xl") {
+        video {
+            height: 520px;
+        }
+
+        .contentAlignment {
+            h2 {
+                font-size: 40px;
+                max-width: 460px;
+            }
+
+            p {
+                margin: 28px auto;
+                font-size: 15px;
+                max-width: 600px;
+            }
+        }
+    }
 }

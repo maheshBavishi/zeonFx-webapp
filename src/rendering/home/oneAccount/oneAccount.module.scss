@@ -165,4 +165,47 @@
             display: block;
         }
     }
+
+    @include respond-to("xl") {
+        padding: 0 0 60px 0;
+
+        .grid {
+            grid-template-columns: 1fr 520px;
+            gap: 60px;
+            padding: 60px 0 0 0;
+
+            h2 {
+                font-size: 40px;
+                margin: 12px 0 45px 0;
+            }
+
+            .box {
+                .innerBox {
+                    .body {
+                        padding: 24px 24px 36px 24px;
+
+                        .text {
+                            padding: 0 0 24px 0;
+
+                            p, span {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+
+                    .header {
+                        padding: 24px;
+
+                        h3 {
+                            font-size: 22px;
+                        }
+
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

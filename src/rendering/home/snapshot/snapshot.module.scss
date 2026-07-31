@@ -34,4 +34,17 @@
             }
         }
     }
+
+    @include respond-to("xl") {
+        height: 520px;
+
+        .topAlignment {
+            padding: 180px 0 0 0;
+
+            h2 {
+                font-size: 40px;
+                max-width: 380px;
+            }
+        }
+    }
 }

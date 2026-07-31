@@ -285,4 +285,17 @@
             }
         }
     }
+
+    @include respond-to("xl") {
+        padding: 100px 0;
+
+        h2 {
+            font-size: 40px;
+            margin: 14px 0 45px 0;
+        }
+
+        .grid {
+            gap: 20px;
+        }
+    }
 }
