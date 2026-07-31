@@ -12,6 +12,7 @@
     0% {
         --border-angle: 0deg;
     }
+
     100% {
         --border-angle: 360deg;
     }
@@ -91,10 +92,11 @@
         }
 
         .Crypto {
-            max-width: 370px;
             width: 100%;
+            max-width: 265px;
             height: 100%;
             display: block;
+            object-fit: cover;
         }
 
         .Stocks {
@@ -157,6 +159,7 @@
                 height: 100%;
                 width: 100%;
                 display: block;
+                border-radius: 24px;
                 object-fit: cover;
             }
 
@@ -248,14 +251,12 @@
             inset: -2px;
             border-radius: inherit;
             padding: 2px;
-            background: conic-gradient(
-                from var(--border-angle),
-                transparent 0deg,
-                rgba(20, 158, 245, 0.3) 140deg,
-                #149EF5 180deg,
-                rgba(20, 158, 245, 0.3) 220deg,
-                transparent 360deg
-            );
+            background: conic-gradient(from var(--border-angle),
+                    transparent 0deg,
+                    rgba(20, 158, 245, 0.3) 140deg,
+                    #149EF5 180deg,
+                    rgba(20, 158, 245, 0.3) 220deg,
+                    transparent 360deg);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
@@ -268,15 +269,13 @@
 
         &:hover {
             &::before {
-                background: conic-gradient(
-                    from var(--border-angle),
-                    rgba(255, 255, 255, 0.08) 0deg,
-                    rgba(20, 158, 245, 0.3) 120deg,
-                    #149EF5 180deg,
-                    #60C5FF 200deg,
-                    rgba(20, 158, 245, 0.3) 240deg,
-                    rgba(255, 255, 255, 0.08) 360deg
-                );
+                background: conic-gradient(from var(--border-angle),
+                        rgba(255, 255, 255, 0.08) 0deg,
+                        rgba(20, 158, 245, 0.3) 120deg,
+                        #149EF5 180deg,
+                        #60C5FF 200deg,
+                        rgba(20, 158, 245, 0.3) 240deg,
+                        rgba(255, 255, 255, 0.08) 360deg);
                 animation: rotateBorderAngle 4s linear infinite;
             }
 
