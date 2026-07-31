@@ -5,11 +5,6 @@ import ButtonText from '@/components/buttonText';
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
 
-const Indices = '/assets/video/Indices.mp4';
-const Metals = '/assets/video/Metals.mp4';
-const Commodities = '/assets/video/Commodities.mp4';
-const Crypto = '/assets/video/Crypto.mp4';
-const Stocks = '/assets/video/Stocks.mp4';
 const CoinImage = '/assets/images/coin.png';
 
 export default function MarketOverview() {
@@ -33,7 +28,7 @@ export default function MarketOverview() {
                         }}
                         transition={{ duration: 0.5 }}
                     >
-                        <video src={Indices} alt="Indices" loop muted autoPlay playsInline></video>
+                        <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785484999/0726_4_1_gachnt.mp4' alt="Indices" loop muted autoPlay playsInline></video>
                         <div className={styles.textstyle}>
                             <h3>
                                 Indices
@@ -95,7 +90,7 @@ export default function MarketOverview() {
                             </p>
                         </div>
                         <div className={styles.metalVideo}>
-                            <video src={Metals} alt="Metals" loop muted autoPlay playsInline></video>
+                            <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785484968/0726_4_ybkni3.mp4' alt="Metals" loop muted autoPlay playsInline></video>
                         </div>
                     </motion.div>
                     <motion.div
@@ -120,7 +115,7 @@ export default function MarketOverview() {
                             </p>
                         </div>
                         <div className={styles.commodities}>
-                            <video src={Commodities} alt="Commodities" loop muted autoPlay playsInline></video>
+                            <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785479975/0731_2_sx372h.mp4' alt="Commodities" loop muted autoPlay playsInline></video>
                         </div>
                     </motion.div>
                 </div>
@@ -137,7 +132,7 @@ export default function MarketOverview() {
                         }}
                         transition={{ duration: 0.5 }}
                     >
-                        <video className={styles.Crypto} src={Crypto} alt="Crypto" loop autoPlay muted playsInline></video>
+                        <video className={styles.Crypto} src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785479511/0731_1_deapee.mp4' alt="Crypto" loop autoPlay muted playsInline></video>
                         <div className={styles.textstyle}>
                             <h3>
                                 Crypto CFDs
@@ -160,7 +155,7 @@ export default function MarketOverview() {
                         }}
                         transition={{ duration: 0.5, delay: 0.1 }}
                     >
-                        <video className={styles.Stocks} src={Stocks} alt="Stocks" loop autoPlay muted playsInline></video>
+                        <video className={styles.Stocks} src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785478675/0731_2_jcvrf6.mp4' alt="Stocks" loop autoPlay muted playsInline></video>
                         <div className={styles.textstyle}>
                             <h3>
                                 Stocks

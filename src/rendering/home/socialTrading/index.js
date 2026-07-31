@@ -5,7 +5,6 @@ import styles from './socialTrading.module.scss';
 import ButtonText from '@/components/buttonText';
 import Button from '@/components/button';
 
-const SocialTradingVideo = '/assets/video/SocialTrading.mp4';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -34,7 +33,7 @@ const itemVariants = {
 export default function SocialTrading() {
     return (
         <div className={styles.socialTrading}>
-            <video src={SocialTradingVideo} alt="SocialTradingVideo" loop muted autoPlay playsInline></video>
+            <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785485064/Social_Trading_dgcndi.mp4' alt="SocialTradingVideo" loop muted autoPlay playsInline></video>
             <div className={styles.blur}></div>
             <div className={styles.contentAlignment}>
                 <motion.div

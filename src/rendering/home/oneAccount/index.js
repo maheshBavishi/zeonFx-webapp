@@ -5,7 +5,6 @@ import ButtonText from '@/components/buttonText';
 import Button from '@/components/button';
 import { motion } from 'framer-motion';
 
-const Account = '/assets/video/Account.mp4';
 
 export default function OneAccount() {
     return (
@@ -111,7 +110,7 @@ export default function OneAccount() {
                     </div>
                     <div className={styles.items}>
                         <motion.video
-                            src={Account}
+                            src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785485593/upscaled-video_1_oevujc.mp4'
                             alt="Account"
                             loop
                             muted

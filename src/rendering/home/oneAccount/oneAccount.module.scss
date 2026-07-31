@@ -38,6 +38,7 @@
         grid-template-columns: 1fr 680px;
         gap: 140px;
         align-items: center;
+        padding: 100px 0 0 0;
 
         .buttonAlignment {
             padding: 24px 0 0 0;
@@ -158,7 +159,8 @@
         }
 
         video {
-            max-width: 100%;
+            max-width: 70%;
+            margin: 0 auto;
             width: 100%;
             display: block;
         }

@@ -2,8 +2,6 @@
 import styles from './whyZeonfx.module.scss';
 import ButtonText from '@/components/buttonText';
 import { motion } from 'framer-motion';
-
-const AboutZeonfx = '/assets/video/AboutZeonfx.mp4';
 const Spreads = '/assets/images/Spreads.png';
 const Execution = '/assets/images/execution.png';
 const Markets = '/assets/images/markets.png';
@@ -48,7 +46,7 @@ export default function WhyZeonfx() {
     return (
         <div className={styles.whyZeonfx}>
             <div className={styles.videosize}>
-                <video src={AboutZeonfx} alt="AboutZeonfx" autoPlay muted loop></video>
+                <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785406213/0727_2_1_cccprp.mp4' alt="AboutZeonfx" autoPlay muted loop></video>
             </div>
             <div className='container'>
                 <div className={styles.grid}>

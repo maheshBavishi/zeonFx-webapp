@@ -7,8 +7,6 @@ import TapIcon from '@/icons/tapIcon';
 import HandIcon from '@/icons/handIcon';
 import CupIcon from '@/icons/cupIcon';
 
-const Bottom = '/assets/video/Bottom.mp4';
-
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -36,7 +34,7 @@ const itemVariants = {
 export default function BetterTrading() {
     return (
         <div className={styles.betterTrading}>
-            <video src={Bottom} alt="Bottom" autoPlay loop muted playsInline></video>
+            <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785472461/CTA_uwbhne.mp4' alt="Bottom" autoPlay loop muted playsInline></video>
             <div className={styles.contentAlignment}>
                 <div className='container'>
                     <motion.div

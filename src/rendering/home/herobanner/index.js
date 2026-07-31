@@ -29,7 +29,7 @@ export default function Herobanner() {
     return (
         <div className={styles.herobanner}>
             <div className={styles.video}>
-                <video src={HeroVideo} alt={HeroVideo} loop muted autoPlay />
+                <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785484904/Homepage-Hero_ixgc0j.mp4' alt={HeroVideo} loop muted autoPlay />
             </div>
             <div className={styles.contentAlignment}>
                 <motion.div

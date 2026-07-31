@@ -1,6 +1,5 @@
 import styles from './traderTools.module.scss';
 import ButtonText from '@/components/buttonText';
-const Tools = '/assets/video/Tools.mp4';
 const Calculator = '/assets/images/Calculator.png';
 const Economic = '/assets/images/Economic.png';
 const News = '/assets/images/News.png';
@@ -8,7 +7,7 @@ const Analysis = '/assets/images/Analysis.png';
 export default function TraderTools() {
     return (
         <div className={styles.traderTools}>
-            <video src={Tools} alt="Tools" loop playsInline autoPlay muted></video>
+            <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785485023/Tools_sl8iau.mp4' alt="Tools" loop playsInline autoPlay muted></video>
             <div className={styles.contentAlignment}>
                 <div className='container'>
                     <div className={styles.grid}>

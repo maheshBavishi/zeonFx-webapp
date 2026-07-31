@@ -5,7 +5,6 @@ import styles from './getStart.module.scss';
 import ButtonText from '@/components/buttonText';
 import Button from '@/components/button';
 
-const CtaVideo = '/assets/video/cta.mp4';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -34,7 +33,7 @@ const itemVariants = {
 export default function GetStart() {
     return (
         <div className={styles.getStart}>
-            <video src={CtaVideo} alt="CtaVideo" autoPlay muted loop playsInline ></video>
+            <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785485031/CTA-Video_ost9zb.mp4' alt="CtaVideo" autoPlay muted loop playsInline ></video>
             <div className={styles.contentAlignment}>
                 <motion.div
                     className='container'

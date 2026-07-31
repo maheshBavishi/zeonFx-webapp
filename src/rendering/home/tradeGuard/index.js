@@ -8,7 +8,6 @@ import CupIcon from '@/icons/cupIcon';
 import Button from '@/components/button';
 import { motion } from 'framer-motion';
 
-const Lock = '/assets/video/Lock.mp4';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -33,7 +32,7 @@ const itemVariants = {
 export default function TradeGuard() {
     return (
         <div className={styles.tradeGuard}>
-            <video src={Lock} alt="Lock" loop muted autoPlay playsInline></video>
+            <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785485015/0726_nihtbf.mp4' alt="Lock" loop muted autoPlay playsInline></video>
             <div className={styles.relative}>
                 <motion.div
                     className={styles.content}

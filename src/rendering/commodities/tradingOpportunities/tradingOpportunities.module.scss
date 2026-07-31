@@ -4,10 +4,82 @@
 
 .tradingOpportunities {
     padding: 80px 0;
+    position: relative;
+    overflow: hidden;
 
     .grid {
         display: grid;
         grid-template-columns: 1fr 434px;
         gap: 160px;
+        align-items: center;
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        h2 {
+            margin: 16px 0 40px 0;
+            color: #FFF;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 105%;
+            text-transform: capitalize;
+
+            span {
+                @include text-gradient;
+            }
+
+            @include respond-to("sm") {
+                font-size: 32px;
+                margin: 12px 0 24px 0;
+            }
+        }
+
+        p {
+            color: #FFF;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 150%;
+            max-width: 654px;
+            margin: 0 0 20px 0;
+            opacity: 0.9;
+        }
+
+        .imageWrapper {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .floatingImage {
+                position: relative;
+                z-index: 2;
+                width: 100%;
+                will-change: transform;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45));
+                }
+            }
+
+            .ambientGlow {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 85%;
+                height: 85%;
+                transform: translate(-50%, -50%);
+                background: radial-gradient(circle, rgba(0, 168, 255, 0.28) 0%, rgba(138, 43, 226, 0.18) 50%, transparent 70%);
+                filter: blur(45px);
+                border-radius: 50%;
+                z-index: 1;
+                pointer-events: none;
+            }
+        }
     }
-}
+}
