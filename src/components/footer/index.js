@@ -3,6 +3,7 @@ import styles from './footer.module.scss';
 import FacebookIcon from '@/icons/facebookIcon';
 import InstagramIcon from '@/icons/instagramIcon';
 import TwitterIcon from '@/icons/twitterIcon';
+import Link from 'next/link';
 const FooterTextLogo = '/assets/logo/footer-text.svg';
 export default function Footer() {
     return (
@@ -41,12 +42,12 @@ export default function Footer() {
                                 <h3>
                                     Markets
                                 </h3>
-                                <a>Forex</a>
-                                <a>Indices</a>
-                                <a>Metals</a>
-                                <a>Commodities</a>
-                                <a>Stocks</a>
-                                <a>Crypto CFDs</a>
+                                <Link href="/forex">Forex</Link>
+                                <Link href="/indices">Indices</Link>
+                                <Link href="/metals">Metals</Link>
+                                <Link href="/commodities">Commodities</Link>
+                                <Link href="/stocks">Stocks</Link>
+                                <Link href="/crypto">Crypto CFDs</Link>
                             </div>
                             <div>
                                 <h3>
