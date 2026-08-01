@@ -4,6 +4,29 @@
 
 .faqSection {
     padding: 150px 0;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        max-width: 1300px;
+        width: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        content: '';
+        border-radius: 50%;
+        opacity: 0.4;
+        background: var(--Logo-Blue, linear-gradient(180deg, #149EF5 3.23%, #057FDA 38.93%, #046FC9 66.97%));
+        filter: blur(250px);
+        height: 100px;
+    }
+
+
+    :global(.container) {
+        position: relative;
+        z-index: 1;
+    }
 
     .grid {
         display: grid;
@@ -117,6 +140,4 @@
             }
         }
     }
-
-
 }

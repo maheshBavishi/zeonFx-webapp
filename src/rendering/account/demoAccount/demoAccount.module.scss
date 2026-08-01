@@ -1,0 +1,94 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+
+.demoAccount {
+    padding: 150px 0;
+
+    .box {
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.04);
+        overflow: hidden;
+
+        .boxHeader {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 24px 24px 0 0;
+            padding: 70px;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                content: '';
+                border-radius: 567px;
+                height: 150px;
+                opacity: 0.2;
+                background: var(--Logo-Blue, linear-gradient(180deg, #149EF5 3.23%, #057FDA 38.93%, #046FC9 66.97%));
+                filter: blur(150px);
+                max-width: 500px;
+            }
+
+            h2 {
+                color: #FFF;
+                font-size: 48px;
+                font-weight: 600;
+                line-height: 105%;
+                text-transform: capitalize;
+                margin: 16px 0;
+            }
+
+            p {
+                color: rgba(255, 255, 255, 0.50);
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 110%;
+                max-width: 1024px;
+            }
+        }
+
+        .boxBody {
+            padding: 70px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            h3 {
+                color: #FFF;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 105%;
+                margin: 0 0 12px 0;
+                text-transform: uppercase;
+            }
+
+            .allIcongrid {
+                .grid {
+                    display: grid;
+                    grid-template-columns: 24px 1fr;
+                    gap: 16px;
+                    align-items: center;
+                    padding: 0 0 12px 0;
+
+                    &:last-child {
+                        padding: 0;
+                    }
+
+                    img {
+                        display: block;
+                    }
+
+                    span {
+                        color: rgba(255, 255, 255, 0.50);
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 110%;
+                    }
+                }
+            }
+        }
+    }
+}

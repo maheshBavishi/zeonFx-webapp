@@ -69,7 +69,13 @@ export default function OneAccount() {
                             <Button text="Open Account" primary />
                         </div>
                     </div>
-                    <div className={styles.items}></div>
+                    <div className={styles.items}>
+                        <div className={styles.videoAlignment}>
+                            <video autoPlay playsInline loop muted src="https://res.cloudinary.com/izyjnpsh/video/upload/v1785485593/upscaled-video_1_oevujc.mp4">
+
+                            </video>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

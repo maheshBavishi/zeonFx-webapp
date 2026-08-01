@@ -25,6 +25,7 @@
     .grid {
         display: grid;
         grid-template-columns: 446px 1fr;
+        align-items: center;
         gap: 100px;
         position: relative;
         z-index: 9;
@@ -33,6 +34,16 @@
             padding: 24px 0 0 0;
 
             button {
+                width: 100%;
+            }
+        }
+
+        .videoAlignment {
+            display: flex;
+            justify-content: center;
+
+            video {
+                max-width: 70%;
                 width: 100%;
             }
         }
