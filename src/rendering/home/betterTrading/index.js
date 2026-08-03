@@ -34,51 +34,59 @@ const itemVariants = {
 export default function BetterTrading() {
     return (
         <div className={styles.betterTrading}>
-            <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785472461/CTA_uwbhne.mp4' alt="Bottom" autoPlay loop muted playsInline></video>
             <div className={styles.contentAlignment}>
                 <div className='container'>
-                    <motion.div
-                        className={styles.topAlignment}
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.3 }}
-                    >
-                        <motion.div className={styles.center} variants={itemVariants}>
-                            <ButtonText text="About ZeonFX" />
-                        </motion.div>
-                        <motion.h2 variants={itemVariants}>
-                            A better trading <br />
-                            experience, built for <span> you.</span>
-                        </motion.h2>
-                        <motion.div className={styles.allContnetAlignment} variants={itemVariants}>
-                            <div className={styles.iconText}>
-                                <TapIcon />
-                                <span>
-                                    Client-first
-                                </span>
-                            </div>
-                            <div className={styles.iconText}>
-                                <HandIcon />
-                                <span>
-                                    Transparent
-                                </span>
-                            </div>
-                            <div className={styles.iconText}>
-                                <CupIcon />
-                                <span>
-                                    Innovative
-                                </span>
-                            </div>
-                        </motion.div>
-                        <motion.p variants={itemVariants}>
-                            ZeonFX is a next-generation broker built for traders who want more speed, more control, and more opportunity. Our approach is client-first, our pricing is transparent, and our technology is built to keep you trading without friction. Learn more about who
-                            we are and how we operate.
-                        </motion.p>
-                        <motion.div className={styles.buttonCenter} variants={itemVariants}>
-                            <Button text="About ZeonFX" primary />
-                        </motion.div>
-                    </motion.div>
+                    <div className={styles.grid}>
+                        <div>
+                            <motion.div
+                                className={styles.topAlignment}
+                                variants={containerVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.3 }}
+                            >
+                                <motion.div className={styles.center} variants={itemVariants}>
+                                    <ButtonText text="About ZeonFX" />
+                                </motion.div>
+                                <motion.h2 variants={itemVariants}>
+                                    A better trading <br />
+                                    experience, built for <span> you.</span>
+                                </motion.h2>
+                                <motion.div className={styles.allContnetAlignment} variants={itemVariants}>
+                                    <div className={styles.iconText}>
+                                        <TapIcon />
+                                        <span>
+                                            Client-first
+                                        </span>
+                                    </div>
+                                    <div className={styles.iconText}>
+                                        <HandIcon />
+                                        <span>
+                                            Transparent
+                                        </span>
+                                    </div>
+                                    <div className={styles.iconText}>
+                                        <CupIcon />
+                                        <span>
+                                            Innovative
+                                        </span>
+                                    </div>
+                                </motion.div>
+                                <motion.p variants={itemVariants}>
+                                    ZeonFX is a next-generation broker built for traders who want more speed, more control, and more opportunity. Our approach is client-first, our pricing is transparent, and our technology is built to keep you trading without friction. Learn more about who
+                                    we are and how we operate.
+                                </motion.p>
+                                <motion.div className={styles.buttonCenter} variants={itemVariants}>
+                                    <Button text="About ZeonFX" primary />
+                                </motion.div>
+                            </motion.div>
+                        </div>
+                        <div>
+                            <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785755842/0cef7610-231b-4a6d-8f10-b71e498fe5a4_ikwjdy.mp4' alt="Bottom" autoPlay loop muted playsInline></video>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
