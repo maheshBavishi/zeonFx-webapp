@@ -15,6 +15,29 @@
         }
     }
 
+    .relative {
+        position: relative;
+
+        &::before {
+            max-width: 800px;
+            height: 600px;
+            border-radius: 861px;
+            opacity: 0.8;
+            background: #000;
+            filter: blur(175px);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            content: '';
+        }
+    }
+
+    :global(.container) {
+        position: relative;
+        z-index: 1;
+    }
+
     .contentAlignment {
         position: absolute;
         top: 60%;

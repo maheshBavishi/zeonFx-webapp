@@ -32,27 +32,29 @@ export default function Herobanner() {
                 <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785730521/5804767_Coll_wavebreak_Entrepreneur_1920x1080_cc0msp.mp4' alt={HeroVideo} loop muted autoPlay />
             </div>
             <div className={styles.contentAlignment}>
-                <motion.div
-                    className='container'
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    <motion.div variants={itemVariants}>
-                        <ButtonText text="Multi Asset Broker" />
+                <div className={styles.relative}>
+                    <motion.div
+                        className='container'
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        <motion.div variants={itemVariants}>
+                            <ButtonText text="Multi Asset Broker" />
+                        </motion.div>
+                        <motion.h1 variants={itemVariants}>
+                            Trade Forex & CFDs with <span> Confidence</span>
+                        </motion.h1>
+                        <motion.p variants={itemVariants}>
+                            Access global markets with competitive spreads, fast execution,
+                            and institutional-grade platforms. One account, every market.
+                        </motion.p>
+                        <motion.div variants={itemVariants} className={styles.buttonAlignment}>
+                            <Button text="OPEN LIVE ACCOUNT" primary />
+                            <Button text="TRY DEMO" />
+                        </motion.div>
                     </motion.div>
-                    <motion.h1 variants={itemVariants}>
-                        Trade Forex & CFDs with <span> Confidence</span>
-                    </motion.h1>
-                    <motion.p variants={itemVariants}>
-                        Access global markets with competitive spreads, fast execution,
-                        and institutional-grade platforms. One account, every market.
-                    </motion.p>
-                    <motion.div variants={itemVariants} className={styles.buttonAlignment}>
-                        <Button text="OPEN LIVE ACCOUNT" primary />
-                        <Button text="TRY DEMO" />
-                    </motion.div>
-                </motion.div>
+                </div>
             </div>
         </div>
     )
