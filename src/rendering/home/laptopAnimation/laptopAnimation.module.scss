@@ -21,52 +21,20 @@
 
     .laptopWrapper {
         position: relative;
-        width: 900px;
-        max-width: 85vw;
+        width: 1000px;
+        max-width: 90vw;
         margin: 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        .laptopFrame {
+        .frameImage,
+        .canvasFrame {
             width: 100%;
             height: auto;
             display: block;
-            position: relative;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .screenDisplay {
-            position: absolute;
-            top: 5.34%;
-            left: 10.24%;
-            width: 79.52%;
-            height: 83.31%;
-            z-index: 1;
-            overflow: hidden;
-            border-radius: 8px 8px 0 0;
-            background-color: #000;
-            transform: translateZ(0);
-            backface-visibility: hidden;
-
-            .screenImage {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: top center;
-                display: block;
-                transform: translateZ(0);
-                backface-visibility: hidden;
-            }
-
-            .screenOverlay {
-                z-index: 2;
-                will-change: opacity;
-            }
+            max-width: 100%;
+            object-fit: contain;
         }
     }
 
