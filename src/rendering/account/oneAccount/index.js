@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './oneAccount.module.scss';
 import ButtonText from '@/components/buttonText';
 import Button from '@/components/button';

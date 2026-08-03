@@ -10,9 +10,13 @@ const TrueIcon = '/assets/icons/true.svg';
 
 const benefitsList = [
     'Live market prices and conditions',
+
     'Virtual funds you set and can reset',
+
     'Full access to MT5 and the Web Terminal',
+
     'All six asset classes',
+
     'No time pressure and no deposit required'
 ];
 
@@ -85,7 +89,8 @@ export default function DemoAccount() {
                         </motion.h2>
 
                         <motion.p variants={fadeUp}>
-                            Practice on the real platform with virtual funds. A ZeonFX demo mirrors live market conditions so you can test strategies, learn MT5 and the Web Terminal, and build confidence before you
+                            Practice on the real platform with virtual funds. A ZeonFX demo mirrors live market conditions so you can test strategies,
+                            learn MT5 and the Web Terminal, and build confidence before you
                             fund a live account. No deposit, no risk to your money.
                         </motion.p>
                     </div>

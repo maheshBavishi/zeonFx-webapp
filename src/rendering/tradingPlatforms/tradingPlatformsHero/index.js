@@ -1,12 +1,10 @@
 'use client'
-
-import styles from './metalsBanner.module.scss';
+import React from 'react'
+import styles from './tradingPlatformsHero.module.scss';
 import ButtonText from '@/components/buttonText';
 import Button from '@/components/button';
 import { motion } from 'framer-motion';
-
-const MetalsHero = '/assets/video/metalshero.mp4';
-
+const MetalsHero = '/assets/video/trading.mp4';
 const containerVariants = {
     hidden: {},
     visible: {
@@ -48,10 +46,10 @@ const buttonsFade = {
         transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
     },
 };
-
-export default function MetalsBanner() {
+export default function TradingPlatformsHero() {
     return (
         <div className={styles.metalsBanner}>
+            {/* Video fades in independently */}
             <motion.video
                 src={MetalsHero}
                 autoPlay
@@ -62,6 +60,7 @@ export default function MetalsBanner() {
                 initial="hidden"
                 animate="visible"
             />
+
             <div className={styles.contentAlignment}>
                 <div className='container'>
                     {/* Staggered content block */}
@@ -73,20 +72,21 @@ export default function MetalsBanner() {
                     >
                         {/* Tag */}
                         <motion.div variants={fadeUp}>
-                            <ButtonText text="metals trading" />
+                            <ButtonText text="trading platforms" />
                         </motion.div>
 
                         {/* Heading */}
                         <motion.h1 variants={fadeUp}>
-                            Gold and Silver, <br />
-                            Priced the Way the <br />
-                            Market   <span> Really</span> Moves.
+                            Two platforms, <br />
+                            one login, <br />
+                            <span>
+                                every </span> device.
                         </motion.h1>
 
                         {/* Description */}
                         <motion.p variants={fadeUpSlow}>
-                            Trade XAU/USD, XAG/USD, platinum, and palladium with pricing that reflects the real market. Precious metals belong in every trader's toolkit
-                            as both a speculative and a defensive instrument.
+                            Use MetaTrader 5 for advanced charting and automation, or the ZeonFX Web Terminal for fast
+                            multi-chart trading in your browser. Your account works across both.
                         </motion.p>
 
                         {/* Buttons */}

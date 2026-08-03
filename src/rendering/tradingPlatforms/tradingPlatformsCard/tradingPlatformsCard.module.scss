@@ -1,0 +1,140 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.tradingPlatformsCard {
+    padding: 150px 0;
+    background: rgba(255, 255, 255, 0.04);
+
+    .allCard {
+        .card {
+            border-radius: 24px;
+            border-right: 2px solid #149EF5;
+            overflow: hidden;
+            border-left: 2px solid #149EF5;
+            background: rgba(255, 255, 255, 0.04);
+            position: relative;
+            padding: 80px 0;
+            margin: 0 0 60px 0;
+
+            &:last-child {
+                padding: 80px 120px 0 80px;
+
+                .grid {
+                    grid-template-columns: 1fr 402px;
+
+                    .leftAlignment {
+                        padding-left: 0;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                .grid {
+                    grid-template-columns: 562px 1fr;
+
+                    .leftAlignment {
+                        order: 2;
+                    }
+                }
+            }
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100px;
+                content: '';
+                border-radius: 1310px;
+                opacity: 0.4;
+                background: var(--Logo-Blue, linear-gradient(180deg, #149EF5 3.23%, #057FDA 38.93%, #046FC9 66.97%));
+                filter: blur(150px);
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: 1fr 580px;
+                align-items: center;
+                position: relative;
+                z-index: 1;
+                gap: 60px;
+
+                .leftAlignment {
+                    padding-left: 80px;
+                }
+
+                .twoBtnAlignment {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+
+                    img {
+                        cursor: pointer;
+                        display: block;
+                    }
+                }
+
+                .allIconAlignment {
+                    padding: 0 0 32px 0;
+
+                    .iconText {
+                        display: grid;
+                        grid-template-columns: 20px 1fr;
+                        gap: 16px;
+                        padding: 0 0 10px 0;
+
+                        &:last-child {
+                            padding: 0;
+                        }
+
+                        img {
+                            display: block;
+                        }
+
+                        span {
+                            display: block;
+                            color: rgba(255, 255, 255, 0.50);
+                            font-size: 16px;
+                            font-weight: 400;
+                            line-height: 110%;
+                        }
+                    }
+                }
+
+                p {
+                    margin: 32px 0;
+                    color: var(--Text-Secondary, #8E8E8E);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 110%;
+                    max-width: 490px;
+                }
+
+                h2 {
+                    color: var(--Text-Primary, #FFF);
+                    font-size: 48px;
+                    font-weight: 600;
+                    line-height: 105%;
+                    text-transform: capitalize;
+
+                    span {
+                        @include text-gradient;
+                    }
+                }
+
+                .img {
+                    img {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+}

@@ -1,6 +1,5 @@
 "use client";
 
-import React from 'react';
 import styles from './benefitsSection.module.scss';
 import ButtonText from '@/components/buttonText';
 import { motion } from 'framer-motion';

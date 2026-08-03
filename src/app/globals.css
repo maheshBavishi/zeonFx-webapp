@@ -53,10 +53,4 @@ video {
   -ms-user-select: none;
 
   -webkit-user-drag: none;
-  pointer-events: none;
-}
-
-html,
-body {
-  user-select: none;
 }
