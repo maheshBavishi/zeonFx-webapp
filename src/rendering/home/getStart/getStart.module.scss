@@ -16,6 +16,7 @@
         background: rgba(10, 10, 10, 0.95);
         filter: blur(15px);
         content: '';
+        z-index: -1;
     }
 
     &::after {

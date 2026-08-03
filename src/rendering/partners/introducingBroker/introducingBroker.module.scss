@@ -1,0 +1,90 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.introducingBroker {
+    padding: 160px 0;
+
+    &::before {
+        position: absolute;
+        max-width: 1300px;
+        width: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        content: '';
+        border-radius: 1310px;
+        border-radius: 50%;
+        opacity: 0.4;
+        background: var(--Logo-Blue, linear-gradient(180deg, #149EF5 3.23%, #057FDA 38.93%, #046FC9 66.97%));
+        filter: blur(250px);
+        height: 100px;
+    }
+
+
+    :global(.container) {
+        position: relative;
+        z-index: 1;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 548px;
+        gap: 68px;
+        align-items: center;
+
+        h2 {
+            color: #FFF;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 105%;
+            margin: 16px 0 32px 0;
+            text-transform: capitalize;
+
+            span {
+                @include text-gradient;
+            }
+        }
+
+        p {
+            color: var(--Text-Secondary, #8E8E8E);
+            font-size: 16px;
+            @include font-normal;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 105%;
+            max-width: 548px;
+        }
+
+        h3 {
+            margin: 32px 0 16px 0;
+            color: #FFF;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 105%;
+            text-transform: uppercase;
+        }
+
+        .icontext {
+            display: grid;
+            grid-template-columns: 20px 1fr;
+            padding: 0 0 10px 0;
+            gap: 16px;
+
+            span {
+                display: block;
+                color: rgba(255, 255, 255, 0.50);
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 110%;
+            }
+        }
+
+        .items {
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}

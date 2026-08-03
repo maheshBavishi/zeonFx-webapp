@@ -1,0 +1,97 @@
+@use '../../scss/main.scss' as *;
+@use '../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../scss/font/font.scss' as *;
+
+.card {
+    border-radius: 24px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.35);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 12px;
+        padding: 1px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0) 100%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    .inner {
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+        padding: 10px;
+
+        .details {
+            padding: 20px 10px 0 10px;
+
+            button {
+                border: none;
+                background: rgba(255, 255, 255, 0.10);
+                color: var(--Text-Primary, #FFF);
+                font-size: 11.828px;
+                font-weight: 700;
+                line-height: 125%;
+                letter-spacing: -0.237px;
+                padding: 8px;
+            }
+
+            span {
+                display: block;
+                padding: 16px 0;
+                color: var(--Text-Secondary, #8E8E8E);
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 125%;
+                letter-spacing: -0.24px;
+                text-transform: uppercase;
+            }
+
+            h3 {
+                color: var(--Text-Primary, #FFF);
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 125%;
+                letter-spacing: -0.32px;
+            }
+
+            a {
+                display: block;
+                padding: 20px 0 0 0;
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 125%;
+                letter-spacing: -0.24px;
+                @include text-gradient;
+            }
+        }
+
+        .img {
+            height: 170px;
+            overflow: hidden;
+            border-radius: 12px;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 12px;
+                transition: transform 0.4s ease;
+            }
+        }
+    }
+
+    &:hover {
+        .inner .img img {
+            transform: scale(1.06);
+        }
+    }
+}

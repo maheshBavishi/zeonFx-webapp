@@ -1,0 +1,59 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.ourStory {
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        position: absolute;
+        max-width: 1300px;
+        width: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        content: '';
+        border-radius: 1310px;
+        border-radius: 50%;
+        opacity: 0.4;
+        background: var(--Logo-Blue, linear-gradient(180deg, #149EF5 3.23%, #057FDA 38.93%, #046FC9 66.97%));
+        filter: blur(250px);
+        height: 100px;
+    }
+
+
+
+    .grid {
+        display: grid;
+        grid-template-columns: 624px 1fr;
+        gap: 68px;
+        align-items: center;
+
+        .content {
+            padding: 0 0 56px 0;
+
+            &:last-child {
+                padding: 0;
+            }
+
+            &:first-child {
+                margin: 16px 0 0 0;
+            }
+
+            h3 {
+                color: #FFF;
+                margin: 0 0 16px 0;
+                font-size: 48px;
+                font-weight: 600;
+                line-height: 105%;
+                text-transform: capitalize;
+
+                span {
+                    @include text-gradient;
+                }
+            }
+        }
+    }
+}

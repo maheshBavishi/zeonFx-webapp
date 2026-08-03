@@ -1,0 +1,160 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.getinTouch {
+    padding: 150px 0;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        position: absolute;
+        max-width: 1300px;
+        width: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        content: '';
+        border-radius: 1310px;
+        border-radius: 50%;
+        opacity: 0.4;
+        background: var(--Logo-Blue, linear-gradient(180deg, #149EF5 3.23%, #057FDA 38.93%, #046FC9 66.97%));
+        filter: blur(250px);
+        height: 100px;
+    }
+
+
+    :global(.container) {
+        position: relative;
+        z-index: 1;
+    }
+
+    .box {
+        display: grid;
+        grid-template-columns: 394px 1fr;
+        gap: 100px;
+        border-radius: 24px;
+        border-right: 2px solid #149EF5;
+        padding: 70px;
+        border-left: 2px solid #149EF5;
+        max-width: 1064px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.04);
+
+        button {
+            width: 100%;
+        }
+
+        .input {
+            padding: 0 0 20px 0;
+
+            label {
+                color: #FFF;
+                display: block;
+                padding: 0 0 10px 0;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 105%;
+                @include font-semibold;
+            }
+
+            input {
+                width: 100%;
+                border-radius: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.10);
+                background: rgba(255, 255, 255, 0.04);
+                height: 60px;
+                padding: 0 16px;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 105%;
+                color: #fff;
+                @include font-medium;
+                outline: none;
+                transition: .3s ease-in-out;
+
+                &:focus {
+                    border: 1px solid #149EF5;
+                }
+            }
+
+            textarea {
+                width: 100%;
+                border-radius: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.10);
+                background: rgba(255, 255, 255, 0.04);
+                height: 200px;
+                resize: none;
+                padding: 14px 16px;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 105%;
+                color: #fff;
+                @include font-medium;
+                outline: none;
+                transition: .3s ease-in-out;
+
+                &:focus {
+                    border: 1px solid #149EF5;
+                }
+            }
+        }
+
+        h2 {
+            color: var(--Text-Primary, #FFF);
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 105%;
+            text-transform: capitalize;
+            margin: 0 0 70px 0;
+
+            span {
+                @include text-gradient;
+            }
+        }
+
+        h3 {
+            color: #FFF;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 105%;
+            text-transform: uppercase;
+            @include font-semibold;
+            margin: 0 0 10px 0;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.80);
+            @include font-normal;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 105%;
+        }
+
+        .iconText {
+            display: grid;
+            grid-template-columns: 48px 1fr;
+            gap: 16px;
+            align-items: center;
+            padding: 0 0 32px 0;
+
+            &:last-child {
+                padding: 0;
+                align-items: flex-start;
+            }
+
+            span {
+                display: block;
+                color: #FFF;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 105%;
+                @include font-medium;
+            }
+
+            img {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,107 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.blogBanner {
+    padding: 250px 0 160px 0;
+    background-image: url('/assets/images/blog.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    background-position: bottom bottom;
+
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    h2 {
+        margin: 30px 0 80px 0;
+        text-align: center;
+        color: #FFF;
+        font-size: 70px;
+        font-weight: 600;
+        line-height: 110%;
+        text-transform: capitalize;
+
+        span {
+            @include text-gradient;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 292px 1fr 292px;
+        gap: 20px;
+
+        .items {
+            &:nth-child(2) {
+                height: 100%;
+
+                .card {
+                    height: 100%;
+                }
+            }
+
+            .card {
+                position: relative;
+                height: 165px;
+                border-radius: 12px;
+                margin: 0 0 20px 0;
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                .layer {
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.80) 100%);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: flex-end;
+
+                    .spacing {
+                        padding: 16px;
+
+                        span {
+                            color: var(--Text-Primary, #FFF);
+                            font-size: 12px;
+                            font-weight: 500;
+                            line-height: 125%;
+                            letter-spacing: -0.24px;
+                            padding: 0 0 4px 0;
+                            text-transform: uppercase;
+                        }
+
+                        h3 {
+                            color: var(--Text-Primary, #FFF);
+                            font-size: 16px;
+                            font-weight: 600;
+                            line-height: 125%;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 2;
+                            overflow: hidden;
+                            letter-spacing: -0.32px;
+
+                        }
+                    }
+
+                }
+
+                img {
+                    display: block;
+                    border-radius: 12px;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

@@ -6,6 +6,10 @@
     padding: 150px 0;
     position: relative;
 
+    &.bgchange {
+        background: rgba(255, 255, 255, 0.04);
+    }
+
     .townImage {
         position: absolute;
         bottom: 0;
@@ -48,6 +52,10 @@
             line-height: 105%;
             text-transform: capitalize;
             margin: 16px 0 32px 0;
+
+            &.fullWidth {
+                max-width: 100%;
+            }
 
             span {
                 @include text-gradient;
