@@ -79,10 +79,10 @@ export default function Footer() {
                                 <h3>
                                     Legal
                                 </h3>
-                                <a>Privacy Policy</a>
-                                <a>Terms & Conditions</a>
-                                <a>Risk Disclosure</a>
-                                <a>AML Policy</a>
+                                <Link href="/privacy-policy">Privacy Policy</Link>
+                                <Link href="/terms-conditions">Terms & Conditions</Link>
+                                <Link href="/risk-disclosure">Risk Disclosure</Link>
+                                <Link href="/aml-policy">AML Policy</Link>
                             </div>
                         </div>
                         <div className={styles.footerSecmenu}>

@@ -3,9 +3,9 @@ import styles from './button.module.scss';
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
 
-export default function Button({ text, primary , outline }) {
+export default function Button({ text, primary, outline }) {
     return (
-        <div className={classNames(styles.button, primary ? styles.primary : "" , outline ? styles.outline : "")}>
+        <div className={classNames(styles.button, primary ? styles.primary : "", outline ? styles.outline : "")}>
             <motion.button
                 aria-label={text}
                 whileHover={{

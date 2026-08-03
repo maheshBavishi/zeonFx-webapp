@@ -12,8 +12,8 @@ const menuItems = [
     { name: 'Trading', href: '/' },
     { name: 'Platform', href: '/' },
     { name: 'Tools', href: '/' },
-    { name: 'Partners', href: '/' },
-    { name: 'Company', href: '/' },
+    { name: 'Partners', href: '/partners' },
+    { name: 'Company', href: '/company' },
 ];
 
 function FlipLink({ children, href = '#' }) {
