@@ -40,7 +40,11 @@ const cardItemVariants = {
     },
 };
 
-export default function SimilarBlogs() {
+export default function SimilarBlogs({ similarBlogs = [] }) {
+    if (!similarBlogs || similarBlogs.length === 0) {
+        return null;
+    }
+
     return (
         <div className={styles.similarBlogs}>
             <div className='container'>
@@ -60,9 +64,9 @@ export default function SimilarBlogs() {
                     viewport={{ once: true, margin: "-50px" }}
                     variants={containerVariants}
                 >
-                    {[...Array(4)].map((_, index) => (
-                        <motion.div key={index} variants={cardItemVariants}>
-                            <BlogCard />
+                    {similarBlogs.map((blog, index) => (
+                        <motion.div key={blog.id || index} variants={cardItemVariants}>
+                            <BlogCard blog={blog} index={index} />
                         </motion.div>
                     ))}
                 </motion.div>
@@ -70,4 +74,5 @@ export default function SimilarBlogs() {
         </div>
     );
 }
+
 

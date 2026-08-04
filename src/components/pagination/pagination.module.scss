@@ -1,0 +1,111 @@
+@use '../../scss/main.scss' as *;
+@use '../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../scss/font/font.scss' as *;
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 60px;
+
+    .pages {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: transparent;
+            border: none;
+            color: #FFFFFF;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.2s ease, opacity 0.2s ease;
+
+            &:hover:not(:disabled) {
+                background: rgba(255, 255, 255, 0.08);
+            }
+
+            &:disabled {
+                opacity: 0.3;
+                cursor: not-allowed;
+            }
+        }
+
+        .pageItem {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            &:hover:not(.active) {
+                background: rgba(255, 255, 255, 0.08);
+            }
+
+            &.active {
+                background: #0088FF;
+                color: #FFFFFF;
+                font-weight: 700;
+                box-shadow: 0 4px 14px rgba(0, 136, 255, 0.4);
+            }
+        }
+
+        .dots {
+            color: #8E8E8E;
+            font-size: 15px;
+            padding: 0 4px;
+            user-select: none;
+        }
+    }
+
+    .goTo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        span {
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        input {
+            width: 42px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 600;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.2s ease;
+
+            &:focus {
+                border-color: #0088FF;
+            }
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            -moz-appearance: textfield;
+        }
+    }
+}
