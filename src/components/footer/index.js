@@ -31,9 +31,15 @@ export default function Footer() {
                             Email Us: support@zeonfx.com
                         </p>
                         <div className={styles.socialAlignment}>
-                            <FacebookIcon />
-                            <InstagramIcon />
-                            <TwitterIcon />
+                            <a href='https://www.facebook.com/zeonfxofficial' target='_blank'>
+                                <FacebookIcon />
+                            </a>
+                            <a href='https://www.instagram.com/zeonfxofficial' target='_blank'>
+                                <InstagramIcon />
+                            </a>
+                            <a href='https://x.com/zeonfxofficial' target='_blank'>
+                                <TwitterIcon />
+                            </a>
                         </div>
                     </div>
                     <div>
