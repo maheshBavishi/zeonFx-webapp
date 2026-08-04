@@ -24,12 +24,12 @@ export default function Footer() {
                             Physical Address: <br />
                             Office 4, 25 Corinth Hilltop, Corinth, Gros-Islet, Saint Lucia
                         </p>
-                        <p>
+                        <a href='callto:+1 758 572 5128'>
                             Call Us: +1 758 572 5128
-                        </p>
-                        <p>
+                        </a>
+                        <a href='mailto:support@zeonfx.com'>
                             Email Us: support@zeonfx.com
-                        </p>
+                        </a>
                         <div className={styles.socialAlignment}>
                             <a href='https://www.facebook.com/zeonfxofficial' target='_blank'>
                                 <FacebookIcon />
