@@ -1,0 +1,327 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.calculator {
+    padding: 100px 0;
+    color: #fff;
+
+    .allBox {
+        max-width: 1064px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 60px;
+
+        .box {
+            border-radius: 12px;
+            border-top: 1px solid rgba(20, 158, 245, 0.15);
+            border-bottom: 1px solid rgba(20, 158, 245, 0.15);
+            border-right: 2px solid #149EF5;
+            border-left: 2px solid #149EF5;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 58px;
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100px;
+                z-index: -1;
+                content: '';
+                border-radius: 1310px;
+                opacity: 0.4;
+                background: var(--Logo-Blue, linear-gradient(180deg, #149EF5 3.23%, #057FDA 38.93%, #046FC9 66.97%));
+                filter: blur(150px);
+            }
+
+            ::placeholder {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .threeCol {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding: 0 0 24px 0;
+    }
+
+    .twoCol {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+.title {
+    color: var(--Text-Primary, #FFF);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 105%;
+    margin: 0 0 50px 0;
+    text-transform: capitalize;
+
+    span {
+        @include text-gradient;
+    }
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.widthfull {
+    padding: 0 0 24px 0;
+
+    button {
+        width: 100%;
+    }
+}
+
+.col3 {
+    grid-column: span 3;
+}
+
+.col4 {
+    grid-column: span 4;
+}
+
+.col8 {
+    grid-column: span 8;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    label {
+        color: #FFF;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 105%;
+        @include font-semibold;
+    }
+}
+
+.inputBase {
+    height: 60px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 6px;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    transition: all 0.3s ease;
+
+    &:focus-within {
+        border-color: rgba(20, 158, 245, 0.5);
+    }
+}
+
+.textInput {
+    @extend .inputBase;
+    padding: 0 16px;
+
+    input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        outline: none;
+
+        &::placeholder {
+            color: #666;
+            font-size: 16px;
+        }
+    }
+}
+
+.numberInput {
+    @extend .inputBase;
+    padding: 0 6px;
+    justify-content: space-between;
+
+    button {
+        width: 38px;
+        height: 40px;
+        border-radius: 4px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.10);
+        border: none;
+        color: #8A8E9A;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+    }
+
+    input {
+        width: 40px;
+        text-align: center;
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-size: 14px;
+        outline: none;
+    }
+}
+
+.toggleInput {
+    @extend .inputBase;
+    padding: 4px;
+    display: flex;
+
+    button {
+        flex: 1;
+        height: 100%;
+        border-radius: 4px;
+        border: none;
+        background: transparent;
+        color: #8A8E9A;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &.active {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+
+        &:hover:not(.active) {
+            color: #fff;
+        }
+    }
+}
+
+.calcBtn {
+    width: 100%;
+    height: 48px;
+    background: #149EF5;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 32px;
+    transition: background 0.3s;
+
+    &:hover {
+        background: #0d8de0;
+    }
+}
+
+.resultBoxSingle {
+    display: inline-flex;
+    flex-direction: column;
+    margin: 24px 0 0 0;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(20, 158, 245, 0.5);
+    border-radius: 6px;
+    padding: 24px 32px;
+    background: radial-gradient(100% 100% at 50% 0%, rgba(20, 158, 245, 0.2) 0%, rgba(20, 158, 245, 0) 100%);
+    min-width: 220px;
+    box-shadow: inset 0px 10px 20px -10px rgba(20, 158, 245, 0.3);
+
+    .resultLabel {
+        color: rgba(255, 255, 255, 0.50);
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 105%;
+        padding: 0 0 8px 0;
+        @include font-semibold;
+    }
+
+    .resultValue {
+        font-size: 30px;
+        font-weight: 600;
+        color: #fff;
+    }
+}
+
+.resultBoxMulti {
+    width: 100%;
+    max-width: 464px;
+    border: 1px solid rgba(20, 158, 245, 0.5);
+    border-radius: 6px;
+    padding: 20px 24px;
+    background: radial-gradient(100% 100% at 50% 0%, rgba(20, 158, 245, 0.15) 0%, rgba(20, 158, 245, 0) 100%);
+    box-shadow: inset 0px 10px 20px -10px rgba(20, 158, 245, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .resultRow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span:first-child {
+            color: #FFF;
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 105%;
+            @include font-semibold;
+        }
+
+        span:last-child {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 105%;
+            text-transform: capitalize;
+        }
+
+        .green {
+            color: #21CE99 !important;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+
+    .col3,
+    .col4,
+    .col8 {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .col3,
+    .col4,
+    .col8 {
+        grid-column: span 12;
+    }
+
+    .resultBoxMulti,
+    .resultBoxSingle {
+        width: 100%;
+        min-width: 100%;
+    }
+}
