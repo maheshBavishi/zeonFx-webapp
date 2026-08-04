@@ -72,6 +72,82 @@ function FlipLink({ children, href = '#' }) {
     );
 }
 
+const marketLinks = [
+    { name: 'Forex', img: '/assets/images/h-forex.png' },
+    { name: 'Indices', img: '/assets/images/h-Indices.png' },
+    { name: 'Metals', img: '/assets/images/h-metals.png' },
+    { name: 'Commodities & \nEnergy', img: '/assets/images/h-Commodities.png' },
+    { name: 'Crypto CFDs', img: '/assets/images/h-Crypto.png' },
+    { name: 'Stocks', img: '/assets/images/h-Stocks.png' },
+];
+
+const tradingLinks = [
+    { name: 'Account', img: '/assets/images/h-account.png' },
+    { name: 'Deposit &\nWithdrawals', img: '/assets/images/h-account.png' },
+];
+
+const platformLinks = [
+    { name: 'MetaTrader 5', img: '/assets/images/h-MetaTrader.png' },
+    { name: 'Web Terminal', img: '/assets/images/h-web.png' },
+];
+
+const toolsLinks = [
+    { name: 'Calculator', img: '/assets/images/h-Calculator.png' },
+    { name: 'Economic Calendar', img: '/assets/images/h-Economic.png' },
+    { name: 'News & Sentiment', img: '/assets/images/h-News.png' },
+    { name: 'Trade Guard', img: '/assets/images/h-TradeGuard.png' },
+];
+
+const DropdownMenu = ({ links }) => {
+    const [hoveredIndex, setHoveredIndex] = useState(0);
+
+    return (
+        <div className={styles.dropdownContainer}>
+            <div className={styles.dropdown}>
+                <div className={styles.dropdownLeft}>
+                    {links.map((link, index) => (
+                        <Link
+                            key={index}
+                            href="#"
+                            onMouseEnter={() => setHoveredIndex(index)}
+                            className={hoveredIndex === index ? styles.active : ''}
+                        >
+                            {link.name.split('\n').map((text, i) => (
+                                <React.Fragment key={i}>
+                                    {text}
+                                    {i === 0 && link.name.includes('\n') && <br />}
+                                </React.Fragment>
+                            ))}
+                        </Link>
+                    ))}
+                </div>
+                <div className={styles.dropdownRight}>
+                    {links.map((link, index) => (
+                        <img
+                            key={index}
+                            src={link.img}
+                            alt={link.name.replace('\n', '')}
+                            className={`${styles.hoverImg} ${hoveredIndex === index ? styles.visible : ''}`}
+                        />
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const MenuItem = ({ item }) => {
+    return (
+        <div className={styles.menuItem}>
+            <FlipLink href={item.href}>{item.name}</FlipLink>
+            {item.name === 'Markets' && <DropdownMenu links={marketLinks} />}
+            {item.name === 'Trading' && <DropdownMenu links={tradingLinks} />}
+            {item.name === 'Platform' && <DropdownMenu links={platformLinks} />}
+            {item.name === 'Tools' && <DropdownMenu links={toolsLinks} />}
+        </div>
+    );
+};
+
 export default function Header() {
     const { scrollY } = useScroll();
     const [hidden, setHidden] = useState(false);
@@ -110,13 +186,11 @@ export default function Header() {
             <div className='container'>
                 <div className={styles.headerDesign}>
                     <Link href="/">
-                        <img src={Logo} alt='Logo' style={{ cursor: 'pointer' }} />
+                        <img src={Logo} alt='Logo' className={styles.logoImg} />
                     </Link>
                     <div className={styles.menu}>
                         {menuItems.map((item) => (
-                            <FlipLink key={item.name} href={item.href}>
-                                {item.name}
-                            </FlipLink>
+                            <MenuItem key={item.name} item={item} />
                         ))}
                     </div>
                     <div className={styles.buttonAlignment}>
@@ -128,6 +202,5 @@ export default function Header() {
         </motion.header>
     );
 }
-
 
 

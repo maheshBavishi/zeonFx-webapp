@@ -179,8 +179,12 @@
         background: transparent;
         border: none;
         color: #fff;
-        font-size: 14px;
+        font-size: 16px;
         outline: none;
+    }
+
+    ::placeholder {
+        font-size: 16px;
     }
 }
 

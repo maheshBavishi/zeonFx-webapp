@@ -34,6 +34,95 @@
             align-items: center;
             gap: 38px;
 
+            .menuItem {
+                position: relative;
+                padding: 10px 0; // Extended hover area
+
+                .dropdownContainer {
+                    position: absolute;
+                    top: 100%;
+                    left: -20px;
+                    padding-top: 10px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 0.3s ease;
+                    transform: translateY(10px);
+                    pointer-events: none;
+                    z-index: 100;
+                }
+
+                &:hover .dropdownContainer {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                    pointer-events: auto;
+                }
+
+                .dropdown {
+                    background: #1c1d20;
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                    border-radius: 10px;
+                    padding: 12px;
+                    display: flex;
+                    min-height: 242px;
+                    gap: 12px;
+                    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+                    width: 400px;
+
+                    .dropdownLeft {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+                        min-width: 142px;
+                        padding: 12px;
+
+                        a {
+                            color: #fff;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 105%;
+                            @include font-medium;
+                            transition: color 0.3s ease;
+
+                            &:hover,
+                            &.active {
+                                color: #149EF5;
+                            }
+                        }
+                    }
+
+                    .dropdownRight {
+                        background: rgba(255, 255, 255, 0.05);
+                        border-radius: 12px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 222px;
+                        position: relative;
+
+                        .hoverImg {
+                            position: absolute;
+                            inset: 0;
+                            margin: auto;
+                            max-width: calc(100% - 20px);
+                            object-fit: contain;
+                            max-height: calc(100% - 20px);
+                            display: block;
+                            pointer-events: none;
+                            opacity: 0;
+                            transform: scale(0.95);
+                            transition: opacity 0.3s ease, transform 0.3s ease;
+
+                            &.visible {
+                                opacity: 1;
+                                transform: scale(1);
+                            }
+                        }
+                    }
+                }
+            }
+
             .flipLink {
                 display: block;
                 overflow: hidden;
@@ -64,7 +153,7 @@
             }
         }
 
-        img {
+        .logoImg {
             max-width: 202px;
             display: block;
             cursor: pointer;
