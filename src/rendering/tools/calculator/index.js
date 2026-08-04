@@ -131,7 +131,9 @@ export default function Calculator() {
                                 <FormGroup label="VOLUME, LOTS"><NumberInput value="1.0" /></FormGroup>
                             </div>
                         </div>
-                        <button className={styles.calcBtn}>CALCULATE</button>
+                        <div className={styles.widthfull}>
+                            <Button text="CALCULATE" primary />
+                        </div>
                         <div className={styles.resultBoxMulti}>
                             <div className={styles.resultRow}>
                                 <span>PIP VALUE</span>

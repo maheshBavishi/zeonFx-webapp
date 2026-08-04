@@ -159,13 +159,15 @@
 
             }
 
-            p {
+            p,
+            a {
                 color: rgba(255, 255, 255, 0.50);
                 font-size: 16px;
                 font-weight: 400;
                 line-height: 110%;
                 max-width: 268px;
                 @include font-normal;
+                display: block;
                 margin: 0 0 20px 0;
             }
 

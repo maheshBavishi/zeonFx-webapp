@@ -11,7 +11,7 @@ const menuItems = [
     { name: 'Markets', href: '/' },
     { name: 'Trading', href: '/' },
     { name: 'Platform', href: '/' },
-    { name: 'Tools', href: '/' },
+    { name: 'Tools', href: '/tools' },
     { name: 'Partners', href: '/partners' },
     { name: 'Company', href: '/company' },
 ];
