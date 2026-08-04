@@ -59,8 +59,8 @@ export default function Footer() {
                                 <h3>
                                     Trading
                                 </h3>
-                                <a>Accounts</a>
-                                <a>Deposits & <br /> Withdrawals</a>
+                                <Link href="/account">Accounts</Link>
+                                <Link href="/deposit-withdraws">Deposits & <br /> Withdrawals</Link>
                             </div>
                             <div>
                                 <h3>
