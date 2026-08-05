@@ -85,4 +85,65 @@
             }
         }
     }
+
+    @include respond-to("xl") {
+        .contentAlignment {
+            .bottomSpacing {
+                padding: 0 0 60px 0;
+                
+                h2 {
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+
+    @include respond-to("md") {
+        .contentAlignment {
+            .bottomSpacing {
+                padding: 0 0 50px 0;
+                
+                h2 {
+                    font-size: 32px;
+                    margin: 12px 0 24px 0;
+                }
+
+                p {
+                    font-size: 16px;
+                    max-width: 500px;
+                }
+                
+                .btnAlignment {
+                    padding: 24px 0 0 0;
+                }
+            }
+        }
+    }
+
+    @include respond-to("sm") {
+        .contentAlignment {
+            .bottomSpacing {
+                padding: 0 0 40px 0;
+                
+                h2 {
+                    font-size: 26px;
+                }
+
+                p {
+                    font-size: 14px;
+                    padding: 0 16px;
+                }
+
+                .btnAlignment {
+                    flex-direction: column;
+                    padding: 20px 16px 0 16px;
+                    gap: 12px;
+                    
+                    button {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }

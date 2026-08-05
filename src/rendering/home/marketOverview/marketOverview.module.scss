@@ -87,6 +87,10 @@
                 .textstyle {
                     max-width: 220px;
                     margin-left: auto;
+
+                    @include respond-to("sm") {
+                        max-width: 100%;
+                    }
                 }
             }
         }
@@ -166,6 +170,10 @@
             .textstyle {
                 max-width: 220px;
                 margin-left: auto;
+
+                @include respond-to("sm") {
+                    max-width: 100%;
+                }
             }
         }
 
@@ -294,8 +302,134 @@
             margin: 14px 0 45px 0;
         }
 
-        .grid {
+        .firstgrid,
+        .lastgrid {
             gap: 20px;
+        }
+    }
+
+    @include respond-to("md") {
+        padding: 80px 0;
+
+        h2 {
+            font-size: 32px;
+            margin: 12px 0 30px 0;
+        }
+
+        .firstgrid,
+        .lastgrid,
+        .secgrid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+
+        h2 {
+            font-size: 26px;
+            margin: 12px 0 40px 0;
+        }
+
+        .firstgrid,
+        .lastgrid,
+        .secgrid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .box {
+            height: auto !important;
+            display: flex;
+            flex-direction: column;
+
+            &.first {
+                video {
+                    max-width: 100%;
+                    height: 200px;
+                    border-radius: 24px 24px 0 0;
+                }
+            }
+
+            &.sec {
+                img {
+                    max-width: 100%;
+                    height: 200px;
+                    border-radius: 24px 24px 0 0;
+
+                    @include respond-to("sm") {
+                        height: 230px;
+                    }
+                }
+            }
+
+            .textstyle,
+            .sectext {
+                position: relative !important;
+                top: auto !important;
+                transform: none !important;
+                right: auto !important;
+                left: auto !important;
+                width: 100%;
+                padding: 24px;
+
+                h3 {
+                    font-size: 20px;
+                    margin-bottom: 12px;
+                }
+
+                p {
+                    font-size: 15px;
+                    max-width: 100% !important;
+                }
+            }
+
+            &.stockText,
+            &.CryptoText {
+                .textstyle {
+                    max-width: 100%;
+                    margin: 0;
+                }
+            }
+
+            &.stockText {
+                flex-direction: column-reverse;
+
+                img {
+                    max-width: 100%;
+                    height: 200px;
+                    border-radius: 24px 24px 0 0;
+                }
+            }
+        }
+
+        .lastgrid {
+
+            .Crypto,
+            .Stocks {
+                max-width: 100%;
+                height: 200px;
+                border-radius: 24px 24px 0 0 !important;
+            }
+        }
+
+        .secgrid {
+
+            .metalVideo,
+            .commodities {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+
+                video {
+                    max-width: 70%;
+                    border-radius: 0 0 24px 0;
+                }
+            }
         }
     }
 }

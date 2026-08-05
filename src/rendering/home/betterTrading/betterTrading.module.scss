@@ -122,4 +122,59 @@
             }
         }
     }
+
+    @include respond-to("md") {
+        padding: 0 0 80px 0;
+
+        .grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .contentAlignment {
+            text-align: center;
+            
+            .topAlignment {
+                padding: 60px 0 0 0;
+
+                h2 {
+                    font-size: 32px;
+                    margin: 12px 0 20px 0;
+                }
+            }
+
+            .allContnetAlignment {
+                justify-content: center;
+            }
+        }
+    }
+
+    @include respond-to("sm") {
+        padding: 0 0 60px 0;
+
+        .contentAlignment {
+            .topAlignment {
+                padding: 40px 0 0 0;
+
+                h2 {
+                    font-size: 26px;
+                }
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .allContnetAlignment {
+                flex-direction: column;
+                gap: 16px;
+                
+                .iconText {
+                    padding: 0;
+                    border: none;
+                }
+            }
+        }
+    }
 }

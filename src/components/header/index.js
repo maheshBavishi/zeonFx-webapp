@@ -148,10 +148,70 @@ const MenuItem = ({ item }) => {
     );
 };
 
+const HamburgerIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 12H21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M3 6H21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M3 18H21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
+
+const CloseIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
+
+const MobileMenuItem = ({ item, setMobileMenuOpen }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    
+    let links = [];
+    if (item.name === 'Markets') links = marketLinks;
+    if (item.name === 'Trading') links = tradingLinks;
+    if (item.name === 'Platform') links = platformLinks;
+    if (item.name === 'Tools') links = toolsLinks;
+
+    const hasDropdown = links.length > 0;
+
+    return (
+        <div className={styles.mobileMenuItem}>
+            <div className={styles.mobileMenuHeader} onClick={() => hasDropdown ? setIsOpen(!isOpen) : setMobileMenuOpen(false)}>
+                {hasDropdown ? <span>{item.name}</span> : <Link href={item.href}>{item.name}</Link>}
+                {hasDropdown && (
+                    <span className={`${styles.arrow} ${isOpen ? styles.open : ''}`}>
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    </span>
+                )}
+            </div>
+            {hasDropdown && (
+                <motion.div 
+                    initial={false} 
+                    animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }} 
+                    className={styles.mobileDropdown}
+                >
+                    {links.map((link, idx) => (
+                        <Link 
+                            key={idx} 
+                            href={link.link || '#'} 
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            {link.name.replace(/\n/g, ' ')}
+                        </Link>
+                    ))}
+                </motion.div>
+            )}
+        </div>
+    );
+};
+
 export default function Header() {
     const { scrollY } = useScroll();
     const [hidden, setHidden] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const lastScrollY = useRef(0);
 
     useMotionValueEvent(scrollY, "change", (latest) => {
@@ -197,8 +257,33 @@ export default function Header() {
                         <Button text="Open Account" />
                         <Button text="LOGIN" primary />
                     </div>
+
+                    <div className={styles.mobileMenuToggle} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                        {mobileMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
+                    </div>
                 </div>
             </div>
+
+            <motion.div 
+                className={styles.mobileOverlay}
+                initial={false}
+                animate={{ 
+                    opacity: mobileMenuOpen ? 1 : 0,
+                    pointerEvents: mobileMenuOpen ? 'auto' : 'none',
+                    y: mobileMenuOpen ? 0 : -20
+                }}
+            >
+                <div className={styles.mobileMenuContainer}>
+                    {menuItems.map((item) => (
+                        <MobileMenuItem key={item.name} item={item} setMobileMenuOpen={setMobileMenuOpen} />
+                    ))}
+                    
+                    <div className={styles.mobileButtons}>
+                        <Button text="Open Account" />
+                        <Button text="LOGIN" primary />
+                    </div>
+                </div>
+            </motion.div>
         </motion.header>
     );
 }

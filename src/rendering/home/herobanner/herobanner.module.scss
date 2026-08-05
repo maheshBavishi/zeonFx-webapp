@@ -101,4 +101,59 @@
             }
         }
     }
+
+    @include respond-to("md") {
+        .contentAlignment {
+            top: 50%;
+
+            h1 {
+                font-size: 42px;
+                margin: 16px 0;
+                max-width: 100%;
+            }
+
+            p {
+                font-size: 14px;
+                max-width: 100%;
+            }
+
+            .buttonAlignment {
+                padding: 16px 0 0 0;
+            }
+        }
+    }
+
+    @include respond-to("sm") {
+        height: 100vh;
+        
+        .video {
+            video {
+                height: 100vh;
+            }
+        }
+        
+        .contentAlignment {
+            top: 50%;
+
+            h1 {
+                font-size: 32px;
+                margin: 12px 0;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .buttonAlignment {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 16px 0 0 0;
+                gap: 12px;
+                
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }

@@ -147,4 +147,82 @@
             }
         }
     }
+
+    @include respond-to("xl") {
+        padding: 100px 0;
+
+        .sectionheader {
+            padding: 0 0 60px 0;
+
+            h2 {
+                font-size: 40px;
+            }
+        }
+    }
+
+    @include respond-to("md") {
+        padding: 80px 0;
+
+        .sectionheader {
+            flex-direction: column;
+            text-align: center;
+            gap: 24px;
+            padding: 0 0 50px 0;
+
+            h2 {
+                font-size: 32px;
+                margin: 12px auto 20px auto;
+            }
+
+            .btnAlignment {
+                justify-content: center;
+            }
+        }
+
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+
+        .sectionheader {
+            padding: 0 0 40px 0;
+
+            h2 {
+                font-size: 26px;
+            }
+            
+            .btnAlignment {
+                flex-direction: column;
+                width: 100%;
+                
+                button {
+                    width: 100%;
+                }
+            }
+        }
+
+        .grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+            
+            .items {
+                .inner {
+                    gap: 60px;
+                    padding: 16px;
+                    
+                    h4 {
+                        font-size: 18px;
+                    }
+                    
+                    p, span {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
 }

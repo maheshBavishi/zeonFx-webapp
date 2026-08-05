@@ -88,4 +88,59 @@
             }
         }
     }
+
+    @include respond-to("md") {
+        padding: 0 0 50px 0;
+        display: flex;
+        flex-direction: column-reverse;
+
+        video {
+            position: relative;
+        }
+
+        .content {
+            position: relative;
+            transform: none;
+            top: auto;
+            margin-bottom: 30px;
+
+            h2 {
+                font-size: 32px;
+                margin: 12px 0 20px 0;
+                max-width: 100%;
+            }
+
+            p {
+                margin: 0 0 20px 0;
+                font-size: 15px;
+                max-width: 100%;
+            }
+
+            .allIconText {
+                padding: 0 0 20px 0;
+            }
+        }
+    }
+
+    @include respond-to("sm") {
+        padding: 0 0 40px 0;
+
+        .content {
+            h2 {
+                font-size: 26px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .allIconText {
+                .iconText {
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
 }

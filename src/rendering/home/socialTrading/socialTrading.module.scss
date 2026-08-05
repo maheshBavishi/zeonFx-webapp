@@ -14,6 +14,10 @@
         background: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 0%, #000 69.72%);
         content: '';
         max-width: 500px;
+
+        @include respond-to("md") {
+            display: none;
+        }
     }
 
     &::after {
@@ -25,6 +29,10 @@
         background: linear-gradient(-270deg, rgba(0, 0, 0, 0.00) 0%, #000 69.72%);
         content: '';
         max-width: 500px;
+
+        @include respond-to("md") {
+            display: none;
+        }
     }
 
     video {
@@ -107,6 +115,52 @@
                 margin: 28px auto;
                 font-size: 15px;
                 max-width: 600px;
+            }
+        }
+    }
+
+    @include respond-to("md") {
+        video {
+            height: 440px;
+        }
+
+        .contentAlignment {
+            h2 {
+                font-size: 32px;
+                max-width: 400px;
+            }
+
+            p {
+                margin: 20px auto;
+                font-size: 14px;
+                max-width: 500px;
+            }
+        }
+    }
+
+    @include respond-to("sm") {
+        video {
+            height: 400px;
+        }
+
+        .contentAlignment {
+            padding: 0 16px;
+
+            h2 {
+                font-size: 26px;
+                max-width: 100%;
+            }
+
+            p {
+                margin: 16px auto;
+                font-size: 14px;
+                max-width: 100%;
+            }
+
+            .buttonCenter {
+                button {
+                    width: 100%;
+                }
             }
         }
     }
