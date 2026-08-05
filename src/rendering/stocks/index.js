@@ -56,15 +56,15 @@ const faqSectionData = {
     faqs: [
         {
             q: 'What is a stock CFD?',
-            a: 'A stock CFD (Contract for Difference) allows you to speculate on the price movements of global company shares (such as Apple, Tesla, or Amazon) without owning the physical shares or waiting for traditional settlement processes.',
+            a: 'A stock CFD tracks the price of a company\'s shares. You trade the movement, long or short, with leverage, and never own the underlying share.',
         },
         {
             q: 'Can I short a stock?',
-            a: 'Yes, trading stock CFDs with ZeonFX enables you to take both long (buy) and short (sell) positions, allowing you to potentially profit from both rising and falling market trends.',
+            a: 'Yes. CFDs let you open a sell position to profit from a falling share price, subject to the same market risk as a long.',
         },
         {
             q: 'Do I receive dividends?',
-            a: 'While you do not own the underlying share, dividend adjustments are reflected on your account balance for long positions holding through the ex-dividend date, while short positions incur a dividend deduction.',
+            a: 'CFD positions may be subject to dividend adjustments rather than paid dividends. Check the contract specifications for each instrument.',
         },
     ],
 };

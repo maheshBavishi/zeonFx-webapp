@@ -54,15 +54,15 @@ const faqSectionData = {
     faqs: [
         {
             q: 'What is a crypto CFD?',
-            a: 'A crypto CFD (Contract for Difference) allows you to speculate on the price movements of cryptocurrencies like Bitcoin and Ethereum without needing a digital wallet, private keys, or crypto exchange account.',
+            a: 'A crypto CFD tracks the price of a cryptocurrency. You trade the movement without owning the coin, so there is no wallet or exchange account to manage.',
         },
         {
             q: 'Is crypto trading risky?',
-            a: 'Yes, cryptocurrencies are known for high price volatility. Trading them with CFDs allows you to manage risk with features like negative balance protection, stop-loss orders, and Trade Guard.',
+            a: 'Cryptocurrencies are highly volatile and can move sharply in either direction. Only trade with risk capital and use position sizing and stop losses.',
         },
         {
             q: 'Can I trade crypto on weekends?',
-            a: 'Yes! Unlike traditional markets, crypto markets operate 24/7, allowing you to trade crypto CFDs at any time including weekends on ZeonFX.',
+            a: 'Yes. Crypto CFDs trade around the clock, seven days a week, unlike traditional markets that close at the weekend.',
         },
     ],
 };

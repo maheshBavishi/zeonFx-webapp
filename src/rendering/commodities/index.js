@@ -54,16 +54,16 @@ const faqSectionData = {
     image: FaqImage,
     faqs: [
         {
-            q: 'How do I trade gold with ZeonFX?',
-            a: 'You can trade Gold (XAU/USD) on ZeonFX as a CFD through MT4, MT5, or the ZeonFX Web Terminal. Simply open an account, deposit funds, and open long or short positions with flexible leverage.',
+            q: 'What commodities can I trade?',
+            a: 'ZeonFX focuses on energy commodities such as WTI Crude, Brent Crude, and natural gas, plus a selection of agricultural commodities, all as CFDs.',
         },
         {
-            q: 'Is silver more volatile than gold?',
-            a: 'Yes, silver (XAG/USD) generally exhibits higher percentage price volatility than gold due to its smaller market size and heavy industrial demand, presenting dynamic trading opportunities.',
+            q: 'Do I take delivery of the commodity?',
+            a: 'No. Commodity CFDs are cash-settled on price movement, so there is no physical delivery to handle.',
         },
         {
-            q: 'Why trade metals as CFDs?',
-            a: 'Trading precious metals as CFDs lets you speculate on price movements in both directions (long and short) with leverage, without the costs, physical storage, and security risks of physical metals.',
+            q: 'Why are commodities volatile?',
+            a: 'Commodity prices react to supply decisions, geopolitics, weather, and demand cycles, which can produce sharp moves. Use position sizing and risk controls.',
         },
     ],
 };

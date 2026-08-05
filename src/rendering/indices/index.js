@@ -56,15 +56,15 @@ const faqSectionData = {
     faqs: [
         {
             q: 'What is an index CFD?',
-            a: 'An index CFD (Contract for Difference) allows you to trade on the price movements of a basket of top-performing stocks—such as the US30, NAS100, or SPX500—without taking ownership of the actual underlying shares.',
+            a: 'An index CFD is a contract that tracks the price of a stock index. You trade the price movement without owning the underlying shares, and you can go long or short.',
         },
         {
             q: 'Can I short an index?',
-            a: 'Yes. With CFD trading on ZeonFX, you can take both long (buy) and short (sell) positions, enabling you to potential profit from both rising and falling index markets.',
+            a: 'Yes. CFDs let you open a sell position to profit from a falling index, subject to the same market risk as a long position.',
         },
         {
             q: 'Which indices can I trade?',
-            a: 'ZeonFX provides access to 15+ major global stock indices including US30 (Wall Street), NAS100 (US Tech), SPX500, DAX40 (Germany), FTSE100 (UK), and JP225 (Japan) across US, European, and Asian market sessions.',
+            a: 'ZeonFX offers the major global indices including US30, NAS100, SPX500, DAX40, FTSE100, and JP225, with more added over time.',
         },
     ],
 };

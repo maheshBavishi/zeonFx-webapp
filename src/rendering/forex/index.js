@@ -50,23 +50,19 @@ const faqSectionData = {
     faqs: [
         {
             q: 'What is forex trading?',
-            a: 'Forex (foreign exchange) trading is the buying and selling of currencies on the global market. It is the largest and most liquid financial market in the world, with trillions of dollars traded daily.',
+            a: 'Forex is the global market for buying and selling currencies. Traders aim to profit from movements in the exchange rate between two currencies in a pair. It is the largest and most liquid financial market in the world.',
         },
         {
-            q: 'How much money do I need to start trading?',
-            a: 'You can start trading with as little as $100 on a Standard account. However, we recommend starting with at least $500 to manage risk effectively and have enough margin for multiple positions.',
+            q: 'How does leverage work in forex?',
+            a: 'Leverage lets you control a larger position with a smaller deposit. It magnifies both gains and losses, so risk management is essential. Always understand your effective leverage before you trade.',
         },
         {
-            q: 'What leverage does ZeonFX offer?',
-            a: 'ZeonFX offers leverage up to 1:1000 on Standard accounts. Leverage allows you to control a larger position with a smaller deposit, but it also increases risk. Always use leverage responsibly.',
+            q: 'What are the trading hours?',
+            a: 'The forex market is open 24 hours a day, five days a week, from Sunday evening to Friday evening. The major sessions are Sydney, Tokyo, London, and New York.',
         },
         {
-            q: 'Is my money safe with ZeonFX?',
-            a: 'Yes. Client funds are held in segregated accounts with tier-1 banks, completely separate from company operating funds. We are regulated and adhere to strict financial standards.',
-        },
-        {
-            q: 'What trading platforms does ZeonFX support?',
-            a: 'ZeonFX supports MetaTrader 4 (MT4) and MetaTrader 5 (MT5) — the industry\'s leading platforms available on desktop, web, iOS, and Android.',
+            q: 'What is a spread?',
+            a: 'The spread is the difference between the buy and sell price of a pair. It represents your cost of entry. On the Raw ECN account, spreads start from 0.0 pips plus a low commission.',
         },
     ],
 };
