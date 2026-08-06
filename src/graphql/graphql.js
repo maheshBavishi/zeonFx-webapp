@@ -131,3 +131,21 @@ export const GetBlogBySlug = gql`
   }
 `;
 
+export const CreateContact = gql`
+  mutation Mutation($data: ContactInput!) {
+    createContact(data: $data) {
+      data {
+        id
+        attributes {
+          name
+          email
+          topic
+          message
+          createdAt
+          updatedAt
+          publishedAt
+        }
+      }
+    }
+  }
+`;

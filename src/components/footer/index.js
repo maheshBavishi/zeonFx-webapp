@@ -3,7 +3,6 @@ import FacebookIcon from '@/icons/facebookIcon';
 import InstagramIcon from '@/icons/instagramIcon';
 import TwitterIcon from '@/icons/twitterIcon';
 import Link from 'next/link';
-const FooterTextLogo = '/assets/logo/footer-text.svg';
 const FooterImage = '/assets/images/footer-img.png';
 export default function Footer() {
     return (

@@ -3,6 +3,8 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import GetStart from "@/rendering/home/getStart";
+import SmoothScroll from "@/components/smoothScroll";
+import { Toaster } from 'react-hot-toast';
 
 const interSans = Inter_Tight({
   variable: "--font-inter-tight",
@@ -10,8 +12,6 @@ const interSans = Inter_Tight({
   weight: ["400", "500", "600", "700", "800", "900"],
   display: 'swap',
 });
-
-
 
 export const metadata = {
   title: "ZeonFX | Multi-Asset Forex & CFD Broker | Tight Spreads, Fast Execution",
@@ -22,6 +22,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${interSans.variable} `}>
       <body>
+        <Toaster position="top-right" />
+        <SmoothScroll />
         <Header />
         {children}
         <GetStart />

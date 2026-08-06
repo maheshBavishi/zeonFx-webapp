@@ -98,7 +98,7 @@
                 height: 60px;
                 padding: 0 16px;
                 font-size: 16px;
-                font-weight: 700;
+                font-weight: 500;
                 line-height: 105%;
                 color: #fff;
                 @include font-medium;
@@ -119,7 +119,7 @@
                 resize: none;
                 padding: 14px 16px;
                 font-size: 16px;
-                font-weight: 700;
+                font-weight: 500;
                 line-height: 105%;
                 color: #fff;
                 @include font-medium;
@@ -130,6 +130,28 @@
                     border: 1px solid #149EF5;
                 }
             }
+
+            .error {
+                color: #ff4d4f;
+                font-size: 14px;
+                margin-top: 6px;
+                display: block;
+                @include font-medium;
+            }
+        }
+
+        .successMessage {
+            color: #52c41a;
+            font-size: 16px;
+            margin-top: 15px;
+            @include font-medium;
+        }
+
+        .errorMessage {
+            color: #ff4d4f;
+            font-size: 16px;
+            margin-top: 15px;
+            @include font-medium;
         }
 
         h2 {
@@ -198,7 +220,8 @@
                 align-items: flex-start;
             }
 
-            span {
+            span,
+            a {
                 display: block;
                 color: #FFF;
                 font-size: 18px;
