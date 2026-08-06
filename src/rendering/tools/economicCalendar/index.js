@@ -49,7 +49,7 @@ const TradingViewWidget = memo(() => {
 
 export default function EconomicCalendar() {
   return (
-    <div className={styles.economicCalendar}>
+    <div className={styles.economicCalendar} id='EconomicCalendar'>
       <div className='container'>
         <div className={styles.center}>
           <ButtonText text="Economic Calendar" />

@@ -9,30 +9,30 @@ const Loss = '/assets/images/Loss.png';
 const Timer = '/assets/images/Timer.png';
 
 const textVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
 
 const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2
+        }
     }
-  }
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
 };
 
 export default function TradeGuard() {
     return (
-        <div className={styles.tradeGuard}>
+        <div className={styles.tradeGuard} id='TradeGuard'>
             <div className='container'>
-                <motion.div 
+                <motion.div
                     className={styles.sectiontitle}
                     variants={textVariants}
                     initial="hidden"
@@ -49,7 +49,7 @@ export default function TradeGuard() {
                         Discipline is a skill, and Trade Guard makes it easier to keep.
                     </p>
                 </motion.div>
-                <motion.div 
+                <motion.div
                     className={styles.grid}
                     variants={containerVariants}
                     initial="hidden"

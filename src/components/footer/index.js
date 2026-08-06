@@ -99,9 +99,10 @@ export default function Footer() {
                                         Tools
                                     </h3>
                                     <Link href='/tools'>Calculator</Link>
-                                    <a>Economic Calendar</a>
-                                    <a>News & Sentiment</a>
-                                    <a>Trade Guard</a>
+                                    <Link href='/tools#EconomicCalendar'>Economic Calendar</Link>
+                                    <Link href='/tools#marketnews'>News & Sentiment</Link>
+                                    <Link href='/tools#TradeGuard'>Trade Guard</Link>
+
                                 </div>
                                 <div>
                                     <h3>

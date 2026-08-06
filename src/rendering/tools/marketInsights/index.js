@@ -49,7 +49,7 @@ const TradingViewTimelineWidget = memo(() => {
 
 export default function MarketInsights() {
     return (
-        <div className={styles.marketInsights}>
+        <div className={styles.marketInsights} id='marketnews'>
             <div className='container'>
                 <div className={styles.center}>
                     <ButtonText text="market news" />

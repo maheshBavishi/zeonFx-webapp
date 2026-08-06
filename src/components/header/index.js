@@ -83,7 +83,7 @@ const marketLinks = [
 
 const tradingLinks = [
     { name: 'Account', link: '/account', img: '/assets/images/h-account.png' },
-    { name: 'Deposit &\nWithdrawals', link: '/', img: '/assets/images/h-account.png' },
+    { name: 'Deposit &\nWithdrawals', link: '/deposit-withdraws', img: '/assets/images/h-account.png' },
 ];
 
 const platformLinks = [
@@ -93,9 +93,9 @@ const platformLinks = [
 
 const toolsLinks = [
     { name: 'Calculator', link: '/tools', img: '/assets/images/h-Calculator.png' },
-    { name: 'Economic Calendar', link: '/tools', img: '/assets/images/h-Economic.png' },
-    { name: 'News & Sentiment', link: '/blog', img: '/assets/images/h-News.png' },
-    { name: 'Trade Guard', link: '/trading-platforms', img: '/assets/images/h-TradeGuard.png' },
+    { name: 'Economic Calendar', link: '/tools#EconomicCalendar', img: '/assets/images/h-Economic.png' },
+    { name: 'News & Sentiment', link: '/tools#marketnews', img: '/assets/images/h-News.png' },
+    { name: 'Trade Guard', link: '/tools#TradeGuard', img: '/assets/images/h-TradeGuard.png' },
 ];
 
 const DropdownMenu = ({ links }) => {
