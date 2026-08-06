@@ -67,6 +67,7 @@ export default function TradingPlatformsCard() {
                 <div className={styles.allCard}>
                     {/* Card 1: MetaTrader 5 */}
                     <motion.div
+                        id="MetaTrader5"
                         className={styles.card}
                         variants={cardVariants}
                         initial="hidden"
@@ -126,6 +127,7 @@ export default function TradingPlatformsCard() {
 
                     {/* Card 2: ZeonFX Web Terminal */}
                     <motion.div
+                        id="WebTerminal"
                         className={styles.card}
                         variants={cardVariants}
                         initial="hidden"

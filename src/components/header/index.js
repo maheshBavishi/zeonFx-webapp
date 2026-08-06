@@ -10,7 +10,7 @@ const Logo = '/assets/logo/logo.svg';
 const menuItems = [
     { name: 'Markets', href: '/' },
     { name: 'Trading', href: '/' },
-    { name: 'Platform', href: '/' },
+    { name: 'Platform', href: '/trading-platforms' },
     { name: 'Tools', href: '/tools' },
     { name: 'Partners', href: '/partners' },
     { name: 'Company', href: '/company' },
@@ -87,8 +87,8 @@ const tradingLinks = [
 ];
 
 const platformLinks = [
-    { name: 'MetaTrader 5', link: '/', img: '/assets/images/h-MetaTrader.png' },
-    { name: 'Web Terminal', link: '/', img: '/assets/images/h-web.png' },
+    { name: 'MetaTrader 5', link: '/trading-platforms#MetaTrader5', img: '/assets/images/h-MetaTrader.png' },
+    { name: 'Web Terminal', link: '/trading-platforms#WebTerminal', img: '/assets/images/h-web.png' },
 ];
 
 const toolsLinks = [
