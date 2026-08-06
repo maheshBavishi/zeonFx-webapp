@@ -3,6 +3,12 @@ import Blog from "@/rendering/blog";
 import { graphcms } from "@/graphql/graphQLClient";
 import { GetAllBlogs, GetAllBlogCategories } from "@/graphql/graphql";
 
+export const metadata = {
+  title: "ZeonFX Blog | Market Analysis, Trading Education & Platform Guides",
+  description: "The ZeonFX blog: daily and weekly market analysis, trading education, platform guides, and company news. Sharpen your edge with insights from the ZeonFX team.",
+  keywords: "forex blog, market analysis, trading education, MT5 guides, zeonfx blog",
+};
+
 export default async function Page({ searchParams }) {
     const params = await searchParams;
     const parsedPage = Number(params?.page);
