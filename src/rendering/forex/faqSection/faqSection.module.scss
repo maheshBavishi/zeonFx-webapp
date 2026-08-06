@@ -7,6 +7,18 @@
     overflow: hidden;
     position: relative;
 
+    @include respond-to("xl") {
+        padding: 100px 0;
+    }
+
+    @include respond-to("md") {
+        padding: 80px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     &::before {
         position: absolute;
         max-width: 1300px;
@@ -22,7 +34,6 @@
         height: 100px;
     }
 
-
     :global(.container) {
         position: relative;
         z-index: 1;
@@ -33,6 +44,20 @@
         grid-template-columns: 500px 1fr;
         gap: 160px;
 
+        @include respond-to("xl") {
+            grid-template-columns: 450px 1fr;
+            gap: 80px;
+        }
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+
+        @include respond-to("sm") {
+            gap: 40px;
+        }
+
         .items {
             h2 {
                 color: #FFF;
@@ -41,6 +66,20 @@
                 line-height: 105%;
                 margin: 16px 0 40px 0;
                 text-transform: capitalize;
+
+                @include respond-to("xl") {
+                    font-size: 40px;
+                }
+
+                @include respond-to("md") {
+                    font-size: 32px;
+                    margin: 12px 0 30px 0;
+                }
+
+                @include respond-to("sm") {
+                    font-size: 26px;
+                    margin: 12px 0 40px 0;
+                }
 
                 span {
                     @include text-gradient;
@@ -62,6 +101,14 @@
                 background: rgba(255, 255, 255, 0.04);
                 cursor: pointer;
                 transition: background 0.3s ease;
+
+                @include respond-to("md") {
+                    padding: 16px 20px;
+                }
+
+                @include respond-to("sm") {
+                    padding: 16px;
+                }
 
                 &:hover {
                     background: rgba(255, 255, 255, 0.07);
@@ -100,6 +147,10 @@
                         font-size: 16px;
                         font-weight: 500;
                         line-height: 110%;
+
+                        @include respond-to("sm") {
+                            font-size: 14px;
+                        }
                     }
 
                     .icon {
@@ -112,6 +163,11 @@
                         align-items: center;
                         justify-content: center;
                         transition: background 0.3s ease;
+
+                        @include respond-to("sm") {
+                            width: 36px;
+                            height: 36px;
+                        }
                     }
                 }
 
@@ -132,6 +188,14 @@
 
             .img {
                 padding: 100px 0 0 0;
+
+                @include respond-to("md") {
+                    padding: 40px 0 0 0;
+                }
+
+                @include respond-to("sm") {
+                    padding: 30px 0 0 0;
+                }
 
                 img {
                     display: block;

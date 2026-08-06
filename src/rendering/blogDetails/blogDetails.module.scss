@@ -6,6 +6,14 @@
     position: relative;
     padding: 160px 0 120px 0;
 
+    @include respond-to("md") {
+        padding: 120px 0 80px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 100px 0 60px 0;
+    }
+
     &::before {
         position: absolute;
         top: 0;
@@ -50,7 +58,17 @@
             letter-spacing: -1.2px;
             margin-bottom: 20px;
 
+            @include respond-to("xl") {
+                font-size: 40px;
+            }
 
+            @include respond-to("md") {
+                font-size: 32px;
+            }
+
+            @include respond-to("sm") {
+                font-size: 26px;
+            }
         }
 
         .meta {
@@ -88,6 +106,10 @@
             line-height: 170%;
             margin-bottom: 24px;
 
+            @include respond-to("sm") {
+                font-size: 15px;
+            }
+
             strong {
                 color: #FFFFFF;
                 font-weight: 600;
@@ -103,7 +125,10 @@
             margin-top: 48px;
             margin-bottom: 20px;
 
-
+            @include respond-to("sm") {
+                font-size: 24px;
+                margin-top: 32px;
+            }
         }
 
         ul {
@@ -116,6 +141,10 @@
                 font-size: 16px;
                 line-height: 170%;
                 margin-bottom: 10px;
+
+                @include respond-to("sm") {
+                    font-size: 15px;
+                }
 
                 strong {
                     color: #FFFFFF;

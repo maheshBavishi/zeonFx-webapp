@@ -7,11 +7,24 @@
     position: relative;
     overflow: hidden;
 
+    @include respond-to("md") {
+        padding: 60px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 40px 0;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 1fr 434px;
         gap: 160px;
         align-items: center;
+
+        @include respond-to("xl") {
+            grid-template-columns: 1fr 350px;
+            gap: 60px;
+        }
 
         @include respond-to("md") {
             grid-template-columns: 1fr;
@@ -26,13 +39,22 @@
             line-height: 105%;
             text-transform: capitalize;
 
-            span {
-                @include text-gradient;
+            @include respond-to("xl") {
+                font-size: 40px;
+            }
+
+            @include respond-to("md") {
+                font-size: 32px;
+                margin: 12px 0 24px 0;
             }
 
             @include respond-to("sm") {
-                font-size: 32px;
-                margin: 12px 0 24px 0;
+                font-size: 26px;
+                margin: 12px 0 40px 0;
+            }
+
+            span {
+                @include text-gradient;
             }
         }
 
@@ -44,6 +66,10 @@
             max-width: 654px;
             margin: 0 0 20px 0;
             opacity: 0.9;
+
+            @include respond-to("sm") {
+                font-size: 14px;
+            }
         }
 
         .imageWrapper {

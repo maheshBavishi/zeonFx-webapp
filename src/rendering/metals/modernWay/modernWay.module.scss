@@ -5,11 +5,27 @@
 .modernWay {
     padding: 80px 0;
 
+    @include respond-to("md") {
+        padding: 60px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 40px 0;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 1fr 385px;
         gap: 40px;
         align-items: center;
+
+        @include respond-to("xl") {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+        }
 
         .img {
             img {
@@ -25,6 +41,10 @@
             font-size: 16px;
             font-weight: 400;
             line-height: 105%;
+
+            @include respond-to("sm") {
+                font-size: 14px;
+            }
         }
 
         h2 {
@@ -35,6 +55,20 @@
             text-transform: capitalize;
             max-width: 570px;
             margin: 16px 0 40px 0;
+
+            @include respond-to("xl") {
+                font-size: 40px;
+            }
+
+            @include respond-to("md") {
+                font-size: 32px;
+                margin: 12px 0 24px 0;
+            }
+
+            @include respond-to("sm") {
+                font-size: 26px;
+                margin: 12px 0 40px 0;
+            }
 
             span {
                 @include text-gradient;

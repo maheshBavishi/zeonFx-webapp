@@ -5,10 +5,33 @@
 .entireEconomy {
     padding: 150px 0;
 
+    @include respond-to("xl") {
+        padding: 100px 0;
+    }
+
+    @include respond-to("md") {
+        padding: 80px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 528px 1fr;
         gap: 58px;
+        align-items: center;
+
+        @include respond-to("xl") {
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
 
         .image {
             img {
@@ -24,6 +47,10 @@
             line-height: 105%;
             max-width: 645px;
             margin: 0 0 20px 0;
+
+            @include respond-to("sm") {
+                font-size: 14px;
+            }
         }
 
         h2 {
@@ -33,6 +60,20 @@
             line-height: 105%;
             margin: 16px 0 40px 0;
             text-transform: capitalize;
+
+            @include respond-to("xl") {
+                font-size: 40px;
+            }
+
+            @include respond-to("md") {
+                font-size: 32px;
+                margin: 12px 0 24px 0;
+            }
+
+            @include respond-to("sm") {
+                font-size: 26px;
+                margin: 12px 0 40px 0;
+            }
 
             span {
                 @include text-gradient;

@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './footer.module.scss';
 import FacebookIcon from '@/icons/facebookIcon';
 import InstagramIcon from '@/icons/instagramIcon';
@@ -71,16 +70,14 @@ export default function Footer() {
                                     <h3>
                                         Platform
                                     </h3>
-                                    <a>MetaTrader 5</a>
-                                    <a>Web Trader</a>
-                                    <a>Mobile App</a>
-                                    <a>Downloads</a>
+                                    <a href='https://www.metatrader5.com/en/download' target='_blank'>MetaTrader 5</a>
+                                    <a href='https://web.metatrader.app/terminal?lang=en' target='_blank'>Web Trader</a>
                                 </div>
                                 <div>
                                     <h3>
                                         Company
                                     </h3>
-                                    <a>About ZeonFX</a>
+                                    <Link href="/company">About ZeonFX</Link>
                                     <a>Why ZeonFX</a>
                                     <Link href="/partners">Partners (IB / Affiliate)</Link>
                                     <Link href="/blog">Blog</Link>
@@ -101,10 +98,9 @@ export default function Footer() {
                                     <h3>
                                         Tools
                                     </h3>
-                                    <a>Calculator</a>
+                                    <Link href='/tools'>Calculator</Link>
                                     <a>Economic Calendar</a>
                                     <a>News & Sentiment</a>
-                                    <a>E-Books</a>
                                     <a>Trade Guard</a>
                                 </div>
                                 <div>
@@ -114,9 +110,10 @@ export default function Footer() {
                                     <a>
                                         100% Deposit Bonus
                                     </a>
-                                    <a>
+                                    <Link href='/promotions'>
                                         Trade & Win
-                                    </a>
+                                    </Link>
+
                                 </div>
                                 <div>
                                     <h3>

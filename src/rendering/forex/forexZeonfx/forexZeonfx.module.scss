@@ -7,6 +7,18 @@
     position: relative;
     overflow: hidden;
 
+    @include respond-to("xl") {
+        padding: 100px 0;
+    }
+
+    @include respond-to("md") {
+        padding: 80px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     &::before {
         position: absolute;
         max-width: 1300px;
@@ -40,6 +52,21 @@
         text-transform: capitalize;
         margin: 16px 0 60px 0;
         text-align: center;
+
+        @include respond-to("xl") {
+            font-size: 40px;
+            margin: 16px 0 40px 0;
+        }
+
+        @include respond-to("md") {
+            font-size: 32px;
+            margin: 12px 0 30px 0;
+        }
+
+        @include respond-to("sm") {
+            font-size: 26px;
+            margin: 12px 0 40px 0;
+        }
 
         span {
             @include text-gradient;
@@ -85,6 +112,21 @@
         background: rgba(255, 255, 255, 0.04);
         padding: 10px;
 
+        @include respond-to("xl") {
+            flex: 0 0 calc((min(100vw - 40px, 1240px) - 40px) / 3);
+            width: calc((min(100vw - 40px, 1240px) - 40px) / 3);
+        }
+
+        @include respond-to("md") {
+            flex: 0 0 calc((min(100vw - 40px, 1240px) - 20px) / 2);
+            width: calc((min(100vw - 40px, 1240px) - 20px) / 2);
+        }
+
+        @include respond-to("sm") {
+            flex: 0 0 calc(100vw - 40px);
+            width: calc(100vw - 40px);
+        }
+
 
         /* gradient border mask */
         &::before {
@@ -125,6 +167,10 @@
                     font-size: 20px;
                     font-weight: 600;
                     line-height: 110%;
+
+                    @include respond-to("sm") {
+                        font-size: 18px;
+                    }
                 }
 
                 p {
@@ -132,6 +178,10 @@
                     font-size: 16px;
                     font-weight: 400;
                     line-height: 110%;
+
+                    @include respond-to("sm") {
+                        font-size: 14px;
+                    }
                 }
             }
 
@@ -171,6 +221,10 @@
         color: #fff;
         outline: none;
         transition: border-color 0.25s ease, background 0.25s ease, opacity 0.25s ease;
+
+        @include respond-to("sm") {
+            display: none;
+        }
 
         &:hover {
             border-color: rgba(20, 158, 245, 0.5);

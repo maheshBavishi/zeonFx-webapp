@@ -6,6 +6,14 @@
 .notice {
     padding: 80px 0;
 
+    @include respond-to("md") {
+        padding: 60px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 40px 0;
+    }
+
     .center {
         display: flex;
         justify-content: center;
@@ -21,5 +29,9 @@
         line-height: 105%;
         max-width: 858px;
         margin: 0 auto;
+
+        @include respond-to("sm") {
+            font-size: 14px;
+        }
     }
 }

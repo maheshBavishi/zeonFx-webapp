@@ -7,6 +7,18 @@
     overflow: hidden;
     position: relative;
 
+    @include respond-to("xl") {
+        padding: 100px 0;
+    }
+
+    @include respond-to("md") {
+        padding: 80px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     &::before {
         position: absolute;
         max-width: 1300px;
@@ -22,7 +34,6 @@
         filter: blur(150px);
         height: 100px;
     }
-
 
     :global(.container) {
         position: relative;
@@ -43,6 +54,18 @@
         margin: 16px auto;
         text-align: center;
 
+        @include respond-to("xl") {
+            font-size: 40px;
+        }
+
+        @include respond-to("md") {
+            font-size: 32px;
+        }
+
+        @include respond-to("sm") {
+            font-size: 26px;
+        }
+
         span {
             @include text-gradient;
         }
@@ -56,8 +79,19 @@
         font-size: 18px;
         font-weight: 400;
         line-height: 110%;
+
+        @include respond-to("md") {
+            font-size: 16px;
+            margin: 0 auto 40px auto;
+        }
+
+        @include respond-to("sm") {
+            font-size: 14px;
+            margin: 0 auto 30px auto;
+        }
     }
-        .tableWrap {
+
+    .tableWrap {
         border-radius: 16px;
         background: rgba(255, 255, 255, 0.04);
         max-width: 746px;
@@ -65,6 +99,10 @@
         position: relative;
         z-index: 9;
         padding: 10px;
+
+        @include respond-to("sm") {
+            overflow-x: auto;
+        }
 
         &::before {
             content: '';
@@ -104,6 +142,17 @@
                 line-height: 110%;
                 text-transform: uppercase;
                 text-align: left;
+
+                @include respond-to("md") {
+                    padding: 12px;
+                    font-size: 14px;
+                }
+
+                @include respond-to("sm") {
+                    padding: 10px;
+                    font-size: 12px;
+                    white-space: nowrap;
+                }
             }
         }
 
@@ -132,6 +181,17 @@
                 font-weight: 400;
                 line-height: 110%;
 
+                @include respond-to("md") {
+                    padding: 12px;
+                    font-size: 14px;
+                }
+
+                @include respond-to("sm") {
+                    padding: 10px;
+                    font-size: 14px;
+                    white-space: nowrap;
+                }
+
                 &:first-child {
                     border-bottom-left-radius: 16px;
                 }
@@ -141,8 +201,6 @@
                 }
             }
         }
-
-
     }
 
 
@@ -157,6 +215,10 @@
             font-size: 16px;
             font-weight: 400;
             line-height: 110%;
+
+            @include respond-to("sm") {
+                font-size: 14px;
+            }
         }
     }
 

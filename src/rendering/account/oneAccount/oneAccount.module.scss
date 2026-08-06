@@ -6,6 +6,18 @@
     padding: 150px 0;
     position: relative;
 
+    @include respond-to("xl") {
+        padding: 100px 0;
+    }
+
+    @include respond-to("md") {
+        padding: 80px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     &::before {
         position: absolute;
         max-width: 1300px;
@@ -30,6 +42,19 @@
         position: relative;
         z-index: 9;
 
+        @include respond-to("xl") {
+            gap: 60px;
+        }
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @include respond-to("sm") {
+            gap: 30px;
+        }
+
         .btnTopAlignment {
             padding: 24px 0 0 0;
 
@@ -45,6 +70,14 @@
             video {
                 max-width: 70%;
                 width: 100%;
+
+                @include respond-to("md") {
+                    max-width: 80%;
+                }
+
+                @include respond-to("sm") {
+                    max-width: 100%;
+                }
             }
         }
 
@@ -75,11 +108,28 @@
                 .body {
                     padding: 30px 30px 48px 30px;
 
+                    @include respond-to("md") {
+                        padding: 24px 24px 30px 24px;
+                    }
+                    
+                    @include respond-to("sm") {
+                        padding: 20px 20px 24px 20px;
+                    }
+
                     .text {
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
                         padding: 0 0 30px 0;
+                        gap: 12px;
+
+                        @include respond-to("md") {
+                            padding: 0 0 24px 0;
+                        }
+
+                        @include respond-to("sm") {
+                            padding: 0 0 20px 0;
+                        }
 
                         &:last-child {
                             padding: 0;
@@ -90,6 +140,14 @@
                             font-size: 20px;
                             font-weight: 400;
                             line-height: 110%;
+
+                            @include respond-to("md") {
+                                font-size: 16px;
+                            }
+
+                            @include respond-to("sm") {
+                                font-size: 14px;
+                            }
                         }
 
                         span {
@@ -98,6 +156,14 @@
                             font-size: 20px;
                             font-weight: 600;
                             line-height: 110%;
+
+                            @include respond-to("md") {
+                                font-size: 18px;
+                            }
+
+                            @include respond-to("sm") {
+                                font-size: 16px;
+                            }
                         }
                     }
                 }
@@ -111,6 +177,14 @@
                 .header {
                     padding: 30px;
                     position: relative;
+
+                    @include respond-to("md") {
+                        padding: 24px;
+                    }
+                    
+                    @include respond-to("sm") {
+                        padding: 20px;
+                    }
 
                     &::before {
                         position: absolute;
@@ -133,6 +207,15 @@
                         margin: 0 0 12px 0;
                         line-height: 110%;
                         text-transform: uppercase;
+
+                        @include respond-to("md") {
+                            font-size: 20px;
+                        }
+
+                        @include respond-to("sm") {
+                            font-size: 18px;
+                            margin: 0 0 8px 0;
+                        }
                     }
 
                     p {
@@ -140,6 +223,14 @@
                         font-size: 18px;
                         font-weight: 400;
                         line-height: 110%;
+
+                        @include respond-to("md") {
+                            font-size: 16px;
+                        }
+
+                        @include respond-to("sm") {
+                            font-size: 14px;
+                        }
                     }
                 }
             }
@@ -152,6 +243,21 @@
             margin: 16px 0 80px 0;
             line-height: 105%;
             text-transform: capitalize;
+
+            @include respond-to("xl") {
+                font-size: 40px;
+                margin: 16px 0 60px 0;
+            }
+
+            @include respond-to("md") {
+                font-size: 32px;
+                margin: 12px 0 40px 0;
+            }
+
+            @include respond-to("sm") {
+                font-size: 26px;
+                margin: 12px 0 30px 0;
+            }
 
             span {
                 @include text-gradient;

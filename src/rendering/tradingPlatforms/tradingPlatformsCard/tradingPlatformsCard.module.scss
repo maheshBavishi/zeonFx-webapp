@@ -6,6 +6,18 @@
     padding: 150px 0;
     background: rgba(255, 255, 255, 0.04);
 
+    @include respond-to("xl") {
+        padding: 100px 0;
+    }
+
+    @include respond-to("md") {
+        padding: 80px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     .allCard {
         .card {
             border-radius: 24px;
@@ -17,14 +29,59 @@
             padding: 80px 0;
             margin: 0 0 60px 0;
 
+            @include respond-to("xl") {
+                padding: 60px 0;
+            }
+
+            @include respond-to("md") {
+                padding: 40px 20px;
+                border-radius: 16px;
+                margin: 0 0 40px 0;
+            }
+
+            @include respond-to("sm") {
+                padding: 24px 20px;
+                margin: 0 0 24px 0;
+            }
+
             &:last-child {
                 padding: 80px 120px 0 80px;
+
+                @include respond-to("xl") {
+                    padding: 60px 80px 0 60px;
+                }
+
+                @include respond-to("md") {
+                    padding: 40px 20px 0 20px;
+                }
+
+                @include respond-to("sm") {
+                    padding: 24px 20px 0 20px;
+                }
 
                 .grid {
                     grid-template-columns: 1fr 402px;
 
+                    @include respond-to("xl") {
+                        grid-template-columns: 1fr 300px;
+                    }
+
+                    @include respond-to("md") {
+                        grid-template-columns: 1fr;
+                    }
+
                     .leftAlignment {
                         padding-left: 0;
+
+                        @include respond-to("md") {
+                            order: 1;
+                        }
+                    }
+
+                    .img {
+                        @include respond-to("md") {
+                            order: 0;
+                        }
                     }
                 }
             }
@@ -33,8 +90,26 @@
                 .grid {
                     grid-template-columns: 562px 1fr;
 
+                    @include respond-to("xl") {
+                        grid-template-columns: 450px 1fr;
+                    }
+
+                    @include respond-to("md") {
+                        grid-template-columns: 1fr;
+                    }
+
                     .leftAlignment {
                         order: 2;
+
+                        @include respond-to("md") {
+                            order: 1;
+                        }
+                    }
+
+                    .img {
+                        @include respond-to("md") {
+                            order: 0;
+                        }
                     }
                 }
             }
@@ -64,14 +139,42 @@
                 z-index: 1;
                 gap: 60px;
 
+                @include respond-to("xl") {
+                    grid-template-columns: 1fr 450px;
+                    gap: 40px;
+                }
+
+                @include respond-to("md") {
+                    grid-template-columns: 1fr;
+                    gap: 32px;
+                }
+
                 .leftAlignment {
                     padding-left: 80px;
+
+                    @include respond-to("xl") {
+                        padding-left: 60px;
+                    }
+
+                    @include respond-to("md") {
+                        padding-left: 0;
+                    }
                 }
 
                 .twoBtnAlignment {
                     display: flex;
                     align-items: center;
                     gap: 16px;
+
+                    @include respond-to("sm") {
+                        flex-direction: column;
+                        width: 100%;
+
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
 
                     img {
                         cursor: pointer;
@@ -102,6 +205,10 @@
                             font-size: 16px;
                             font-weight: 400;
                             line-height: 110%;
+
+                            @include respond-to("sm") {
+                                font-size: 14px;
+                            }
                         }
                     }
                 }
@@ -113,6 +220,11 @@
                     font-weight: 400;
                     line-height: 110%;
                     max-width: 490px;
+
+                    @include respond-to("sm") {
+                        font-size: 14px;
+                        margin: 24px 0;
+                    }
                 }
 
                 h2 {
@@ -121,6 +233,18 @@
                     font-weight: 600;
                     line-height: 105%;
                     text-transform: capitalize;
+
+                    @include respond-to("xl") {
+                        font-size: 40px;
+                    }
+
+                    @include respond-to("md") {
+                        font-size: 36px;
+                    }
+
+                    @include respond-to("sm") {
+                        font-size: 26px;
+                    }
 
                     span {
                         @include text-gradient;

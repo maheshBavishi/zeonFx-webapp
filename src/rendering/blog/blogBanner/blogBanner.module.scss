@@ -10,6 +10,18 @@
     width: 100%;
     background-position: bottom bottom;
 
+    @include respond-to("xl") {
+        padding: 200px 0 100px 0;
+    }
+
+    @include respond-to("md") {
+        padding: 150px 0 80px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 120px 0 60px 0;
+    }
+
     .center {
         display: flex;
         justify-content: center;
@@ -25,6 +37,21 @@
         line-height: 110%;
         text-transform: capitalize;
 
+        @include respond-to("xl") {
+            font-size: 60px;
+            margin: 30px 0 60px 0;
+        }
+
+        @include respond-to("md") {
+            font-size: 48px;
+            margin: 20px 0 40px 0;
+        }
+
+        @include respond-to("sm") {
+            font-size: 36px;
+            margin: 20px 0 30px 0;
+        }
+
         span {
             @include text-gradient;
         }
@@ -35,9 +62,21 @@
         grid-template-columns: 292px 1fr 292px;
         gap: 20px;
 
+        @include respond-to("xl") {
+            grid-template-columns: 240px 1fr 240px;
+        }
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+        }
+
         .items {
             &:nth-child(2) {
                 height: 100%;
+
+                @include respond-to("md") {
+                    order: -1;
+                }
 
                 .card {
                     height: 100%;
@@ -110,19 +149,18 @@
     0% {
         background-position: -200% 0;
     }
+
     100% {
         background-position: 200% 0;
     }
 }
 
 .skeleton {
-    background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.04) 25%,
-        rgba(255, 255, 255, 0.12) 37%,
-        rgba(255, 255, 255, 0.04) 63%
-    ) !important;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.04) 25%,
+            rgba(255, 255, 255, 0.12) 37%,
+            rgba(255, 255, 255, 0.04) 63%) !important;
     background-size: 200% 100% !important;
     animation: shimmer 1.5s infinite linear;
     border-radius: 12px;
-}
+}

@@ -6,6 +6,10 @@
     margin-top: -100px;
     position: relative;
 
+    @include respond-to("sm") {
+        margin-top: -80px;
+    }
+
     .bottom {
         padding: 16px 0;
         display: flex;
@@ -34,7 +38,7 @@
         padding: 40px 0;
 
         .text {
-            padding: 0 0 50px 0;
+            padding: 0 0 32px 0;
 
             h3 {
                 color: #FFF;
@@ -200,7 +204,7 @@
 
         .footerTextList {
             padding: 30px 0;
-            
+
             .text {
                 padding: 0 0 30px 0;
             }
@@ -210,7 +214,7 @@
             grid-template-columns: 1fr;
             gap: 40px;
             padding: 0 0 30px 0;
-            
+
             .leftContent {
                 .socialAlignment {
                     margin-bottom: 24px;
@@ -223,7 +227,7 @@
                 gap: 40px;
                 padding: 0 0 40px 0;
             }
-            
+
             .footerSecmenu {
                 flex-wrap: wrap;
                 gap: 40px;
@@ -236,7 +240,7 @@
 
         .bottom {
             padding: 24px 0;
-            
+
             p {
                 font-size: 12px;
             }
@@ -244,15 +248,15 @@
 
         .footerTextList {
             padding: 24px 0;
-            
+
             .text {
                 padding: 0 0 24px 0;
-                
+
                 h3 {
                     font-size: 14px;
                     margin: 0 0 12px 0;
                 }
-                
+
                 p {
                     font-size: 14px;
                 }
@@ -261,20 +265,22 @@
 
         .footerGrid {
             gap: 30px;
-            
+
             .leftContent {
-                p, a {
+
+                p,
+                a {
                     max-width: 100%;
                 }
             }
-            
+
             .menuAlignment {
                 gap: 30px;
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 padding: 0 0 30px 0;
             }
-            
+
             .footerSecmenu {
                 gap: 30px;
                 display: grid;

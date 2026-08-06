@@ -5,15 +5,41 @@
 .experienceInstitutional {
     padding: 150px 0;
 
+    @include respond-to("xl") {
+        padding: 100px 0;
+    }
+
+    @include respond-to("md") {
+        padding: 80px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 100px;
 
+        @include respond-to("xl") {
+            gap: 60px;
+        }
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
         .items {
             .stickySection {
                 position: sticky;
                 top: 150px;
+
+                @include respond-to("md") {
+                    position: relative;
+                    top: 0;
+                }
             }
 
             .iconGrid {
@@ -24,6 +50,11 @@
                 padding: 0 0 20px 0;
                 cursor: pointer;
                 will-change: transform;
+
+                @include respond-to("sm") {
+                    grid-template-columns: 80px 1fr;
+                    gap: 0;
+                }
 
                 &:last-child {
                     padding: 0;
@@ -54,12 +85,21 @@
                         background: rgba(255, 255, 255, 0.02);
                         padding: 20px;
 
+                        @include respond-to("sm") {
+                            padding: 16px;
+                        }
+
                         h3 {
                             color: #FFF;
                             font-size: 20px;
                             font-weight: 600;
                             line-height: 110%;
                             margin: 0 0 16px 0;
+
+                            @include respond-to("sm") {
+                                font-size: 18px;
+                                margin: 0 0 10px 0;
+                            }
                         }
 
                         p {
@@ -67,6 +107,10 @@
                             font-size: 16px;
                             font-weight: 400;
                             line-height: 110%;
+
+                            @include respond-to("sm") {
+                                font-size: 14px;
+                            }
                         }
                     }
                 }
@@ -78,6 +122,10 @@
                     align-items: center;
                     justify-content: center;
                     height: 100%;
+
+                    @include respond-to("sm") {
+                        border-left: 2px solid rgba(255, 255, 255, 0.10);
+                    }
                 }
 
             }
@@ -89,6 +137,18 @@
                 line-height: 105%;
                 text-transform: capitalize;
                 margin: 20px 0 0 0;
+
+                @include respond-to("xl") {
+                    font-size: 40px;
+                }
+
+                @include respond-to("md") {
+                    font-size: 36px;
+                }
+
+                @include respond-to("sm") {
+                    font-size: 26px;
+                }
 
                 span {
                     @include text-gradient;

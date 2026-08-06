@@ -6,6 +6,18 @@
     padding: 150px 0;
     position: relative;
 
+    @include respond-to("xl") {
+        padding: 100px 0;
+    }
+
+    @include respond-to("md") {
+        padding: 80px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     &.bgchange {
         background: rgba(255, 255, 255, 0.04);
     }
@@ -28,10 +40,38 @@
         justify-content: space-between;
         padding: 0 0 80px 0;
 
+        @include respond-to("xl") {
+            padding: 0 0 60px 0;
+        }
+
+        @include respond-to("md") {
+            flex-direction: column;
+            text-align: center;
+            gap: 24px;
+            padding: 0 0 50px 0;
+        }
+
+        @include respond-to("sm") {
+            padding: 0 0 40px 0;
+        }
+
         .btnAlignment {
             display: flex;
             align-items: center;
             gap: 24px;
+
+            @include respond-to("md") {
+                justify-content: center;
+            }
+
+            @include respond-to("sm") {
+                flex-direction: column;
+                width: 100%;
+
+                button {
+                    width: 100%;
+                }
+            }
         }
 
         .img {
@@ -53,6 +93,19 @@
             text-transform: capitalize;
             margin: 16px 0 32px 0;
 
+            @include respond-to("xl") {
+                font-size: 40px;
+            }
+
+            @include respond-to("md") {
+                font-size: 32px;
+                margin: 12px auto 20px auto;
+            }
+
+            @include respond-to("sm") {
+                font-size: 26px;
+            }
+
             &.fullWidth {
                 max-width: 100%;
             }
@@ -69,6 +122,16 @@
         gap: 24px;
         position: relative;
         z-index: 1;
+
+        @include respond-to("md") {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @include respond-to("sm") {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
 
         .items {
             position: relative;
@@ -104,6 +167,11 @@
                 height: 100%;
                 transition: background 0.5s ease;
 
+                @include respond-to("sm") {
+                    gap: 60px;
+                    padding: 16px;
+                }
+
                 &.active {
                     background: linear-gradient(180deg, rgba(20, 158, 245, 0.20) 3.23%, rgba(4, 111, 201, 0.00) 59.92%), rgba(255, 255, 255, 0.02);
 
@@ -120,6 +188,10 @@
                     font-weight: 600;
                     padding: 0 0 8px 0;
                     line-height: 110%;
+
+                    @include respond-to("sm") {
+                        font-size: 14px;
+                    }
                 }
 
                 h4 {
@@ -128,6 +200,10 @@
                     font-weight: 600;
                     margin: 0 0 16px 0;
                     line-height: 110%;
+
+                    @include respond-to("sm") {
+                        font-size: 18px;
+                    }
                 }
 
                 p {
@@ -135,6 +211,10 @@
                     font-size: 16px;
                     font-weight: 400;
                     line-height: 110%;
+
+                    @include respond-to("sm") {
+                        font-size: 14px;
+                    }
                 }
 
                 h3 {
@@ -143,84 +223,6 @@
                     font-weight: 600;
                     line-height: 110%;
                     transition: all 0.5s ease;
-                }
-            }
-        }
-    }
-
-    @include respond-to("xl") {
-        padding: 100px 0;
-
-        .sectionheader {
-            padding: 0 0 60px 0;
-
-            h2 {
-                font-size: 40px;
-            }
-        }
-    }
-
-    @include respond-to("md") {
-        padding: 80px 0;
-
-        .sectionheader {
-            flex-direction: column;
-            text-align: center;
-            gap: 24px;
-            padding: 0 0 50px 0;
-
-            h2 {
-                font-size: 32px;
-                margin: 12px auto 20px auto;
-            }
-
-            .btnAlignment {
-                justify-content: center;
-            }
-        }
-
-        .grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-    }
-
-    @include respond-to("sm") {
-        padding: 60px 0;
-
-        .sectionheader {
-            padding: 0 0 40px 0;
-
-            h2 {
-                font-size: 26px;
-            }
-            
-            .btnAlignment {
-                flex-direction: column;
-                width: 100%;
-                
-                button {
-                    width: 100%;
-                }
-            }
-        }
-
-        .grid {
-            grid-template-columns: 1fr;
-            gap: 16px;
-            
-            .items {
-                .inner {
-                    gap: 60px;
-                    padding: 16px;
-                    
-                    h4 {
-                        font-size: 18px;
-                    }
-                    
-                    p, span {
-                        font-size: 14px;
-                    }
                 }
             }
         }

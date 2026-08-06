@@ -1,6 +1,4 @@
 "use client";
-
-import React from 'react';
 import styles from './demoAccount.module.scss';
 import ButtonText from '@/components/buttonText';
 import Button from '@/components/button';
@@ -21,7 +19,6 @@ const benefitsList = [
 ];
 
 export default function DemoAccount() {
-    // Card main entrance container variants
     const cardVariants = {
         hidden: { opacity: 0, y: 45, scale: 0.98 },
         visible: {

@@ -17,5 +17,11 @@
         letter-spacing: 2.4px;
         @include font-normal;
         text-transform: uppercase;
+
+        @include respond-to("sm") {
+            font-size: 12px;
+            padding: 8px 20px;
+            letter-spacing: 2px;
+        }
     }
 }
