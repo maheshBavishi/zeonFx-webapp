@@ -11,15 +11,23 @@ const Vec4 = '/assets/icons/vec4.svg';
 const Vec5 = '/assets/icons/vec5.svg';
 const Vec6 = '/assets/icons/vec6.svg';
 
+
+const GBP = '/assets/icons/GBP.svg';
+const JPY = '/assets/icons/JPY.svg';
+const AUD = '/assets/icons/AUD.svg';
+const CAD = '/assets/icons/CAD.svg';
+const CHF = '/assets/icons/CHF.svg';
+const GBP1 = '/assets/icons/GBP1.svg';
+
 /* ─── Table data ─────────────────────────────────────────────── */
 const ROWS = [
-    { pair: 'EUR/USD', flag: Usd, desc: 'Euro / US Dollar', spread: '0.0', leverage: '1:1000' },
-    { pair: 'GBP/USD', flag: Usd, desc: 'British Pound / US Dollar', spread: '0.1', leverage: '1:1000' },
-    { pair: 'USD/JPY', flag: Usd, desc: 'US Dollar / Japanese Yen', spread: '0.1', leverage: '1:1000' },
-    { pair: 'AUD/USD', flag: Usd, desc: 'Australian Dollar / US Dollar', spread: '0.2', leverage: '1:1000' },
-    { pair: 'USD/CAD', flag: Usd, desc: 'US Dollar / Canadian Dollar', spread: '0.2', leverage: '1:1000' },
-    { pair: 'USD/CHF', flag: Usd, desc: 'US Dollar / Swiss Franc', spread: '0.2', leverage: '1:1000' },
-    { pair: 'EUR/GBP', flag: Usd, desc: 'Euro / British Pound', spread: '0.3', leverage: '1:1000' },
+    { pair: 'EUR/USD', flag: Usd, desc: 'Euro / US Dollar', spread: '0.0', leverage: '1:500' },
+    { pair: 'GBP/USD', flag: GBP, desc: 'British Pound / US Dollar', spread: '0.1', leverage: '1:500' },
+    { pair: 'USD/JPY', flag: JPY, desc: 'US Dollar / Japanese Yen', spread: '0.1', leverage: '1:500' },
+    { pair: 'AUD/USD', flag: AUD, desc: 'Australian Dollar / US Dollar', spread: '0.2', leverage: '1:500' },
+    { pair: 'USD/CAD', flag: CAD, desc: 'US Dollar / Canadian Dollar', spread: '0.2', leverage: '1:500' },
+    { pair: 'USD/CHF', flag: CHF, desc: 'US Dollar / Swiss Franc', spread: '0.2', leverage: '1:500' },
+    { pair: 'EUR/GBP', flag: GBP1, desc: 'Euro / British Pound', spread: '0.3', leverage: '1:500' },
 ];
 
 export default function MarketGlance() {

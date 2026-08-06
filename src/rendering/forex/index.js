@@ -18,7 +18,7 @@ const FaqImage = '/assets/images/faq.png';
 const forexTextListData = [
     '50+ Currency pairs',
     'Spreads from 0.0',
-    '1:1000 Max leverage',
+    '1:500 Max leverage',
     '24/5 Market hours.',
 ];
 

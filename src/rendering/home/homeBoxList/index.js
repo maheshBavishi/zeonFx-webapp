@@ -21,8 +21,8 @@ const containerVariants = {
 
 const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-        opacity: 1, 
+    visible: {
+        opacity: 1,
         y: 0,
         transition: {
             type: "spring",
@@ -34,8 +34,8 @@ const itemVariants = {
 
 const imageVariants = {
     hidden: { opacity: 0, scale: 0.95 },
-    visible: { 
-        opacity: 1, 
+    visible: {
+        opacity: 1,
         scale: 1,
         transition: {
             type: "spring",
@@ -50,7 +50,7 @@ export default function HomeBoxList() {
     return (
         <div className={styles.homeBoxList}>
             <div className='container'>
-                <motion.div 
+                <motion.div
                     className={styles.box}
                     variants={containerVariants}
                     initial="hidden"
@@ -59,7 +59,7 @@ export default function HomeBoxList() {
                 >
                     <div className={styles.text}>
                         <motion.div variants={itemVariants}>
-                            <ButtonText text="bonus" />
+                            <ButtonText text="withdrawals" />
                         </motion.div>
                         <motion.h2 variants={itemVariants}>
                             Fast & Secure
@@ -79,7 +79,7 @@ export default function HomeBoxList() {
                         <img src={SecureImage} alt="SecureImage" />
                     </motion.div>
                 </motion.div>
-                <motion.div 
+                <motion.div
                     className={styles.box}
                     variants={containerVariants}
                     initial="hidden"
@@ -88,7 +88,7 @@ export default function HomeBoxList() {
                 >
                     <div className={styles.text}>
                         <motion.div variants={itemVariants}>
-                            <ButtonText text="bonus" />
+                            <ButtonText text="trade and win" />
                         </motion.div>
                         <motion.h2 variants={itemVariants}>
                             Trade volume, <br /> unlock<span> prizes</span>

@@ -9,11 +9,11 @@ const XRP = '/assets/icons/XRP.svg';
 const LTC = '/assets/icons/LTC.svg';
 
 const ROWS = [
-    { icon: BTC, instrument: 'BTC/USD', description: 'Bitcoin / US Dollar', spread: 'Competitive', leverage: '1:20' },
-    { icon: ETH, instrument: 'ETH/USD', description: 'Ethereum / US Dollar', spread: 'Competitive', leverage: '1:20' },
-    { icon: SOL, instrument: 'SOL/USD', description: 'Solana / US Dollar', spread: 'Competitive', leverage: '1:10' },
-    { icon: XRP, instrument: 'XRP/USD', description: 'XRP / US Dollar', spread: 'Competitive', leverage: '1:10' },
-    { icon: LTC, instrument: 'LTC/USD', description: 'Litecoin / US Dollar', spread: 'Competitive', leverage: '1:10' },
+    { icon: BTC, instrument: 'BTC/USD', description: 'Bitcoin / US Dollar', spread: 'Competitive', leverage: '1:200' },
+    { icon: ETH, instrument: 'ETH/USD', description: 'Ethereum / US Dollar', spread: 'Competitive', leverage: '1:200' },
+    { icon: SOL, instrument: 'SOL/USD', description: 'Solana / US Dollar', spread: 'Competitive', leverage: '1:200' },
+    { icon: XRP, instrument: 'XRP/USD', description: 'XRP / US Dollar', spread: 'Competitive', leverage: '1:200' },
+    { icon: LTC, instrument: 'LTC/USD', description: 'Litecoin / US Dollar', spread: 'Competitive', leverage: '1:200' },
 ];
 
 export default function CryptoTable() {

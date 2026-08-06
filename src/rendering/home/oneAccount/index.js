@@ -43,85 +43,178 @@ export default function OneAccount() {
                         >
                             One Account. <span> Unlimited </span> Potential.
                         </motion.h2>
+                        <div className={styles.newgrid}>
+                            <div>
+                                <motion.div
+                                    className={styles.box}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{ duration: 0.5, delay: 0.2 }}
+                                >
+                                    <div className={styles.innerBox}>
+                                        <div className={styles.header}>
+                                            <h3>
+                                                Standard
+                                            </h3>
+                                            <p>
+                                                The simplest way to start
+                                            </p>
+                                        </div>
+                                        <div className={styles.line}></div>
+                                        <div className={styles.body}>
+                                            <div className={styles.text}>
+                                                <p>
+                                                    Minimum Deposit:
+                                                </p>
+                                                <span>
+                                                    $10
+                                                </span>
+                                            </div>
+                                            <div className={styles.text}>
+                                                <p>
+                                                    Spreads
+                                                </p>
+                                                <span>
+                                                    From 0.10 Pips
+                                                </span>
+                                            </div>
+                                            <div className={styles.text}>
+                                                <p>
+                                                    Commission
+                                                </p>
+                                                <span>
+                                                    0
+                                                </span>
+                                            </div>
+                                            <div className={styles.text}>
+                                                <p>
+                                                    Leverage
+                                                </p>
+                                                <span>
+                                                    up to 1:500
+                                                </span>
+                                            </div>
+                                            <div className={styles.text}>
+                                                <p>
+                                                    Swap Charges:
+                                                </p>
+                                                <span>
+                                                    0
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
 
-                        <motion.div
-                            className={styles.box}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                        >
-                            <div className={styles.innerBox}>
-                                <div className={styles.header}>
-                                    <h3>
-                                        Standard
-                                    </h3>
-                                    <p>
-                                        The simplest way to start
-                                    </p>
-                                </div>
-                                <div className={styles.line}></div>
-                                <div className={styles.body}>
-                                    <div className={styles.text}>
-                                        <p>
-                                            Minimum Deposit:
-                                        </p>
-                                        <span>
-                                            $10
-                                        </span>
-                                    </div>
-                                    <div className={styles.text}>
-                                        <p>
-                                            Spreads
-                                        </p>
-                                        <span>
-                                            From 0.10 Pips
-                                        </span>
-                                    </div>
-                                    <div className={styles.text}>
-                                        <p>
-                                            Commission
-                                        </p>
-                                        <span>
-                                            0
-                                        </span>
-                                    </div>
-                                    <div className={styles.text}>
-                                        <p>
-                                            Leverage
-                                        </p>
-                                        <span>
-                                            up to 1:1000
-                                        </span>
-                                    </div>
-                                </div>
+                                <motion.div
+                                    className={styles.buttonAlignment}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{ duration: 0.5, delay: 0.3 }}
+                                >
+                                    <Button text="Open Account" primary />
+                                </motion.div>
                             </div>
-                        </motion.div>
+                            <div>
+                                <motion.video
+                                    src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785485593/upscaled-video_1_oevujc.mp4'
+                                    alt="Account"
+                                    loop
+                                    muted
+                                    autoPlay
+                                    playsInline
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
+                                ></motion.video>
+                            </div>
+                            <div>
+                                <motion.div
+                                    className={styles.box}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{ duration: 0.5, delay: 0.2 }}
+                                >
+                                    <div className={styles.innerBox}>
+                                        <div className={styles.header}>
+                                            <h3>
+                                                ECN
+                                            </h3>
+                                            <p>
+                                                For serious traders
+                                            </p>
+                                        </div>
+                                        <div className={styles.line}></div>
+                                        <div className={styles.body}>
+                                            <div className={styles.text}>
+                                                <p>
+                                                    Minimum Deposit:
+                                                </p>
+                                                <span>
+                                                    $10
+                                                </span>
+                                            </div>
+                                            <div className={styles.text}>
+                                                <p>
+                                                    Spreads
+                                                </p>
+                                                <span>
+                                                    From 0.0 Pips
+                                                </span>
+                                            </div>
+                                            <div className={styles.text}>
+                                                <p>
+                                                    Gold Spread
+                                                </p>
+                                                <span>
+                                                    From 1.2 Pips
+                                                </span>
+                                            </div>
+                                            <div className={styles.text}>
+                                                <p>
+                                                    Commission
+                                                </p>
+                                                <span>
+                                                    0
+                                                </span>
+                                            </div>
+                                            <div className={styles.text}>
+                                                <p>
+                                                    Leverage
+                                                </p>
+                                                <span>
+                                                    up to 1:500
+                                                </span>
+                                            </div>
+                                            <div className={styles.text}>
+                                                <p>
+                                                    Swap Charges:
+                                                </p>
+                                                <span>
+                                                    0
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
 
-                        <motion.div
-                            className={styles.buttonAlignment}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.5, delay: 0.3 }}
-                        >
-                            <Button text="Open Account" primary />
-                        </motion.div>
+                                <motion.div
+                                    className={styles.buttonAlignment}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{ duration: 0.5, delay: 0.3 }}
+                                >
+                                    <Button text="Open Account" primary />
+                                </motion.div>
+                            </div>
+                        </div>
                     </div>
-                    <div className={styles.items}>
-                        <motion.video
-                            src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785485593/upscaled-video_1_oevujc.mp4'
-                            alt="Account"
-                            loop
-                            muted
-                            autoPlay
-                            playsInline
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
-                        ></motion.video>
-                    </div>
+
                 </div>
             </div>
         </div>

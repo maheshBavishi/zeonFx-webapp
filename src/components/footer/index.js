@@ -107,9 +107,6 @@ export default function Footer() {
                                     <h3>
                                         Promotions
                                     </h3>
-                                    <a>
-                                        100% Deposit Bonus
-                                    </a>
                                     <Link href='/promotions'>
                                         Trade & Win
                                     </Link>
@@ -119,9 +116,9 @@ export default function Footer() {
                                     <h3>
                                         Social Trading
                                     </h3>
-                                    <a>
+                                    <Link href="/social-trading">
                                         Social Trading
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

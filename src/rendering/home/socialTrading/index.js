@@ -47,8 +47,8 @@ export default function SocialTrading() {
                         <ButtonText text="Social trading" />
                     </motion.div>
                     <motion.h2 variants={itemVariants}>
-                        Follow top traders live.
-                        You set the <span> risk </span> limits.
+                        Via Social trading
+                        Follow <span> top </span> traders live.
                     </motion.h2>
                     <motion.p variants={itemVariants}>
                         Copy top-performing traders in real time and share returns in proportion to your investment. You stay in control of your risk settings at all times. Social Trading carry the same market risk as trading yourself, and past performance

@@ -34,17 +34,13 @@
         height: 100px;
     }
 
-    .grid {
+    .newgrid {
         display: grid;
-        grid-template-columns: 446px 1fr;
-        align-items: center;
-        gap: 100px;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        max-width: 932px;
         position: relative;
         z-index: 9;
-
-        @include respond-to("xl") {
-            gap: 60px;
-        }
 
         @include respond-to("md") {
             grid-template-columns: 1fr;
@@ -54,6 +50,66 @@
         @include respond-to("sm") {
             gap: 30px;
         }
+    }
+
+    .title {
+        margin: 0 0 80px 0;
+        line-height: 105%;
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include respond-to("xl") {
+            margin: 0 0 60px 0;
+        }
+
+        @include respond-to("md") {
+            margin: 0 0 40px 0;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        @include respond-to("sm") {
+            margin: 0 0 30px 0;
+            gap: 24px;
+        }
+
+        video {
+            max-width: 180px;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 48px;
+            font-weight: 600;
+            margin: 16px 0 0 0;
+            line-height: 105%;
+            text-transform: capitalize;
+
+            @include respond-to("xl") {
+                font-size: 40px;
+                margin: 16px 0 0 0;
+            }
+
+            @include respond-to("md") {
+                font-size: 32px;
+                margin: 12px 0 0 0;
+            }
+
+            @include respond-to("sm") {
+                font-size: 26px;
+                margin: 12px 0 0 0;
+            }
+
+            span {
+                @include text-gradient;
+            }
+        }
+    }
+
+    .grid {
 
         .btnTopAlignment {
             padding: 24px 0 0 0;
@@ -63,23 +119,7 @@
             }
         }
 
-        .videoAlignment {
-            display: flex;
-            justify-content: center;
 
-            video {
-                max-width: 70%;
-                width: 100%;
-
-                @include respond-to("md") {
-                    max-width: 80%;
-                }
-
-                @include respond-to("sm") {
-                    max-width: 100%;
-                }
-            }
-        }
 
         .box {
             position: relative;
@@ -106,21 +146,21 @@
                 background: rgba(255, 255, 255, 0.04);
 
                 .body {
-                    padding: 30px 30px 48px 30px;
+                    padding: 30px;
 
                     @include respond-to("md") {
-                        padding: 24px 24px 30px 24px;
+                        padding: 24px;
                     }
-                    
+
                     @include respond-to("sm") {
-                        padding: 20px 20px 24px 20px;
+                        padding: 20px;
                     }
 
                     .text {
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
-                        padding: 0 0 30px 0;
+                        padding: 0 0 24px 0;
                         gap: 12px;
 
                         @include respond-to("md") {
@@ -181,7 +221,7 @@
                     @include respond-to("md") {
                         padding: 24px;
                     }
-                    
+
                     @include respond-to("sm") {
                         padding: 20px;
                     }
@@ -236,32 +276,6 @@
             }
         }
 
-        h2 {
-            color: #fff;
-            font-size: 48px;
-            font-weight: 600;
-            margin: 16px 0 80px 0;
-            line-height: 105%;
-            text-transform: capitalize;
 
-            @include respond-to("xl") {
-                font-size: 40px;
-                margin: 16px 0 60px 0;
-            }
-
-            @include respond-to("md") {
-                font-size: 32px;
-                margin: 12px 0 40px 0;
-            }
-
-            @include respond-to("sm") {
-                font-size: 26px;
-                margin: 12px 0 30px 0;
-            }
-
-            span {
-                @include text-gradient;
-            }
-        }
     }
 }

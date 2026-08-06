@@ -77,8 +77,8 @@ export default function SocialTradingHero() {
 
             {/* Heading */}
             <motion.h1 variants={fadeUp}>
-              Follow the pros, or invest <br />
-              in managed <span> accounts</span>.
+              Via Social trading  <br />
+              Follow <span> top </span> traders live.
             </motion.h1>
 
             {/* Description */}
