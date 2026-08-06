@@ -6,6 +6,7 @@ import ButtonText from '@/components/buttonText';
 import TapIcon from '@/icons/tapIcon';
 import HandIcon from '@/icons/handIcon';
 import CupIcon from '@/icons/cupIcon';
+import Link from 'next/link';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -46,7 +47,9 @@ export default function BetterTrading() {
                                 viewport={{ once: true, amount: 0.3 }}
                             >
                                 <motion.div className={styles.center} variants={itemVariants}>
-                                    <ButtonText text="About ZeonFX" />
+                                    <Link href="/company">
+                                        <ButtonText text="About ZeonFX" />
+                                    </Link>
                                 </motion.div>
                                 <motion.h2 variants={itemVariants}>
                                     A better trading <br />
@@ -77,7 +80,9 @@ export default function BetterTrading() {
                                     we are and how we operate.
                                 </motion.p>
                                 <motion.div className={styles.buttonCenter} variants={itemVariants}>
-                                    <Button text="About ZeonFX" primary />
+                                    <Link href="/company">
+                                        <Button text="About ZeonFX" primary />
+                                    </Link>
                                 </motion.div>
                             </motion.div>
                         </div>

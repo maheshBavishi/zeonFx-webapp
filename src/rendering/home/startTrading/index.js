@@ -88,8 +88,16 @@ export default function StartTrading({
                             </h2>
                         )}
                         <div className={styles.btnAlignment}>
-                            {primaryBtnText && <Button text={primaryBtnText} primary onClick={onPrimaryClick} />}
-                            {secondaryBtnText && <Button text={secondaryBtnText} onClick={onSecondaryClick} />}
+                            {primaryBtnText && (
+                                <a aria-label={primaryBtnText} href='https://client.zeonfx.com/en/register' target='_blank'>
+                                    <Button text={primaryBtnText} primary onClick={onPrimaryClick} />
+                                </a>
+                            )}
+                            {secondaryBtnText && (
+                                <a aria-label={secondaryBtnText} href='https://client.zeonfx.com/en/register' target='_blank'>
+                                    <Button text={secondaryBtnText} onClick={onSecondaryClick} />
+                                </a>
+                            )}
                         </div>
                     </div>
                     {currentStep && currentStep.icon && (

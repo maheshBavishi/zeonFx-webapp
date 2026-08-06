@@ -254,8 +254,12 @@ export default function Header() {
                         ))}
                     </div>
                     <div className={styles.buttonAlignment}>
-                        <Button text="register" />
-                        <Button text="LOGIN" primary />
+                        <a aria-label='https://client.zeonfx.com/en/register' href='https://client.zeonfx.com/en/register' target='_blank'>
+                            <Button text="register" />
+                        </a>
+                        <a href='https://client.zeonfx.com/en/login' target='_blank' aria-label='https://client.zeonfx.com/en/login'>
+                            <Button text="LOGIN" primary />
+                        </a>
                     </div>
 
                     <div className={styles.mobileMenuToggle} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -279,8 +283,12 @@ export default function Header() {
                     ))}
 
                     <div className={styles.mobileButtons}>
-                        <Button text="Open Account" />
-                        <Button text="LOGIN" primary />
+                        <a aria-label='https://client.zeonfx.com/en/register' href='https://client.zeonfx.com/en/register' target='_blank'>
+                            <Button text="register" />
+                        </a>
+                        <a href='https://client.zeonfx.com/en/login' target='_blank' aria-label='https://client.zeonfx.com/en/login'>
+                            <Button text="LOGIN" primary />
+                        </a>
                     </div>
                 </div>
             </motion.div>

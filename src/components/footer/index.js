@@ -78,7 +78,7 @@ export default function Footer() {
                                         Company
                                     </h3>
                                     <Link href="/company">About ZeonFX</Link>
-                                    <a>Why ZeonFX</a>
+                                    <Link href="/why-zeonfx">Why ZeonFX</Link>
                                     <Link href="/partners">Partners (IB / Affiliate)</Link>
                                     <Link href="/blog">Blog</Link>
                                     <Link href="/contact">Contact & Support</Link>

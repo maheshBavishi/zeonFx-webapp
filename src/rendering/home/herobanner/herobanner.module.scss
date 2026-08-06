@@ -60,6 +60,8 @@
             align-items: center;
             gap: 12px;
             padding: 30px 0 0 0;
+
+
         }
 
         h1 {
@@ -125,15 +127,18 @@
 
     @include respond-to("sm") {
         height: 100vh;
-        
+
         .video {
             video {
                 height: 100vh;
             }
         }
-        
+
+
         .contentAlignment {
-            top: 50%;
+            top: inherit;
+            bottom: 10%;
+            transform: inherit;
 
             h1 {
                 font-size: 32px;
@@ -145,11 +150,11 @@
             }
 
             .buttonAlignment {
-                flex-direction: column;
+                display: grid;
                 align-items: flex-start;
                 padding: 16px 0 0 0;
                 gap: 12px;
-                
+
                 button {
                     width: 100%;
                 }

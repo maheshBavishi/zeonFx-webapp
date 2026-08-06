@@ -54,8 +54,12 @@ export default function GetStart() {
                             funds secured in segregated accounts.
                         </motion.p>
                         <motion.div className={styles.btnAlignment} variants={itemVariants}>
-                            <Button text="OPEN LIVE ACCOUNT" primary />
-                            <Button text="TRY DEMO" />
+                            <a aria-label='OPEN LIVE ACCOUNT' href='https://client.zeonfx.com/en/register' target='_blank'>
+                                <Button text="OPEN LIVE ACCOUNT" primary />
+                            </a>
+                            <a aria-label='TRY DEMO' href='https://client.zeonfx.com/en/register' target='_blank'>
+                                <Button text="TRY DEMO" />
+                            </a>
                         </motion.div>
                     </div>
                 </motion.div>

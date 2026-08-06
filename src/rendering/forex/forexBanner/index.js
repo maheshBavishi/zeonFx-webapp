@@ -107,8 +107,12 @@ export default function ForexBanner() {
                         </motion.p>
 
                         <motion.div className={styles.buttonAlignment} variants={buttonsFade}>
-                            <Button text="OPEN LIVE ACCOUNT" primary />
-                            <Button text="TRY DEMO" outline />
+                           <a aria-label='OPEN LIVE ACCOUNT' href='https://client.zeonfx.com/en/register' target='_blank'>
+                                                           <Button text="OPEN LIVE ACCOUNT" primary />
+                                                       </a>
+                                                       <a aria-label='TRY DEMO' href='https://client.zeonfx.com/en/register' target='_blank'>
+                                                           <Button text="TRY DEMO" />
+                                                       </a>
                         </motion.div>
                     </motion.div>
 

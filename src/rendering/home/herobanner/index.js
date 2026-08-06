@@ -50,8 +50,12 @@ export default function Herobanner() {
                             and institutional-grade platforms. One account, every market.
                         </motion.p>
                         <motion.div variants={itemVariants} className={styles.buttonAlignment}>
-                            <Button text="OPEN LIVE ACCOUNT" primary />
-                            <Button text="TRY DEMO" />
+                            <a aria-label='OPEN LIVE ACCOUNT' href='https://client.zeonfx.com/en/register' target='_blank'>
+                                <Button text="OPEN LIVE ACCOUNT" primary />
+                            </a>
+                            <a aria-label='TRY DEMO' href='https://client.zeonfx.com/en/register' target='_blank'>
+                                <Button text="TRY DEMO" />
+                            </a>
                         </motion.div>
                     </motion.div>
                 </div>
