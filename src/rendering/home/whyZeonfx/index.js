@@ -46,7 +46,7 @@ export default function WhyZeonfx() {
     return (
         <div className={styles.whyZeonfx}>
             <div className={styles.videosize}>
-                <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785406213/0727_2_1_cccprp.mp4' alt="AboutZeonfx" autoPlay muted loop></video>
+                <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785406213/0727_2_1_cccprp.mp4' alt="AboutZeonfx" autoPlay muted loop playsInline></video>
             </div>
             <div className='container'>
                 <div className={styles.grid}>
