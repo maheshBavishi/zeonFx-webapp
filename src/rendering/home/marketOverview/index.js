@@ -44,6 +44,7 @@ export default function MarketOverview() {
                     </Link>
                     <Link href="/forex" style={{ textDecoration: 'none', display: 'block' }}>
                         <motion.div
+                            sty
                             className={classNames(styles.box, styles.sec)}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -55,10 +56,11 @@ export default function MarketOverview() {
                             }}
                             transition={{ duration: 0.5, delay: 0.1 }}
                         >
-                            <motion.img
+                            {/* <motion.img
                                 src={CoinImage}
                                 alt="CoinImage"
-                            />
+                            /> */}
+                            <video src="https://res.cloudinary.com/izyjnpsh/video/upload/v1785483715/0731_3_1_mk1rwq.mp4" autoPlay loop muted playsInline></video>
                             <div className={styles.textstyle}>
                                 <h3>
                                     Forex

@@ -28,7 +28,11 @@
         display: grid;
         grid-template-columns: 388px 1fr 388px;
         gap: 60px;
-        align-items: center;
+
+        .videoAlignment {
+            display: flex;
+            align-items: center;
+        }
     }
 
     .svgline {
@@ -176,7 +180,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
 
-            > div:nth-child(2) {
+            >div:nth-child(2) {
                 grid-column: 1 / -1;
                 grid-row: 1;
             }
@@ -228,7 +232,7 @@
             grid-template-columns: 1fr;
             gap: 40px;
 
-            > div:nth-child(2) {
+            >div:nth-child(2) {
                 grid-row: auto;
             }
         }
@@ -242,7 +246,7 @@
             }
 
             video {
-                max-width: 100%;
+                max-width: 50%;
             }
 
             .box {

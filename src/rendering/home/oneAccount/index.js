@@ -117,7 +117,7 @@ export default function OneAccount() {
                                     <Button text="Open Account" primary />
                                 </motion.div>
                             </div>
-                            <div>
+                            <div className={styles.videoAlignment}>
                                 <motion.video
                                     src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785485593/upscaled-video_1_oevujc.mp4'
                                     alt="Account"

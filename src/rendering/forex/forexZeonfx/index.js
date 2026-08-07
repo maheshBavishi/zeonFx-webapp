@@ -40,43 +40,72 @@ export default function ForexZeonfx({ data }) {
     );
 
     const [idx, setIdx] = useState(0);
-    const MAX_IDX = Math.max(0, cards.length - VISIBLE);  // 4
+    const [maxIdx, setMaxIdx] = useState(Math.max(0, cards.length - VISIBLE));
 
     /* ── Step = one card width + one gap ─────────────────────── */
     const getStep = useCallback(() => {
-        const vp = viewportRef.current;
-        if (!vp) return 0;
-        return (vp.clientWidth - GAP * (VISIBLE - 1)) / VISIBLE + GAP;
+        const track = trackRef.current;
+        if (!track || !track.children[0]) return 0;
+        return track.children[0].offsetWidth + GAP;
     }, []);
 
     /* ── Apply translateX to the DOM directly (no re-render) ─── */
-    const setTranslate = (x, animated) => {
+    const setTranslate = useCallback((x, animated) => {
         const track = trackRef.current;
         if (!track) return;
         track.style.transition = animated ? EASE : 'none';
         track.style.transform = `translateX(${x}px)`;
         liveTranslate.current = x;
-    };
+    }, []);
+
+    const updateMeasurements = useCallback(() => {
+        const vp = viewportRef.current;
+        const track = trackRef.current;
+        if (!vp || !track || !track.children[0]) return;
+
+        const step = track.children[0].offsetWidth + GAP;
+        const visibleCards = Math.max(1, Math.round((vp.clientWidth + GAP) / step));
+        const newMax = Math.max(0, cards.length - visibleCards);
+
+        setMaxIdx(newMax);
+        setIdx((prev) => {
+            const clamped = Math.min(prev, newMax);
+            setTranslate(-(clamped * step), false);
+            return clamped;
+        });
+    }, [cards.length, setTranslate]);
+
+    React.useEffect(() => {
+        updateMeasurements();
+        window.addEventListener('resize', updateMeasurements);
+        return () => window.removeEventListener('resize', updateMeasurements);
+    }, [updateMeasurements]);
 
     /* ── Snap to nearest card with smooth animation ───────────── */
-    const snapToNearest = useCallback((currentX) => {
+    const snapToNearest = useCallback((currentX, deltaX = 0) => {
         const step = getStep();
-        const nearest = Math.round(-currentX / step);
-        const clamped = Math.max(0, Math.min(MAX_IDX, nearest));
+        let nearest = Math.round(-currentX / step);
+
+        if (nearest === idx) {
+            if (deltaX < -40) nearest = idx + 1;
+            if (deltaX > 40) nearest = idx - 1;
+        }
+
+        const clamped = Math.max(0, Math.min(maxIdx, nearest));
         setIdx(clamped);
         setTranslate(-(clamped * step), true /* animated */);
-    }, [getStep, MAX_IDX]);
+    }, [getStep, maxIdx, setTranslate, idx]);
 
     /* ── Jump to exact index (arrow / dot) ────────────────────── */
     const goToIdx = useCallback((newIdx) => {
-        const clamped = Math.max(0, Math.min(MAX_IDX, newIdx));
+        const clamped = Math.max(0, Math.min(maxIdx, newIdx));
         setIdx(clamped);
         setTranslate(-(clamped * getStep()), true /* animated */);
-    }, [getStep, MAX_IDX]);
+    }, [getStep, maxIdx, setTranslate]);
 
     /* ── Rubber-band clamp ────────────────────────────────────── */
     const clampWithBand = (x) => {
-        const min = -(MAX_IDX * getStep());
+        const min = -(maxIdx * getStep());
         const max = 0;
         if (x > max) return max + (x - max) * 0.25;   // rubber pull at start
         if (x < min) return min + (x - min) * 0.25;   // rubber pull at end
@@ -100,16 +129,18 @@ export default function ForexZeonfx({ data }) {
         setTranslate(clampWithBand(startTranslate.current + delta), false);
     };
 
-    const onMouseUp = () => {
+    const onMouseUp = (e) => {
         if (!isDragging.current) return;
         isDragging.current = false;
-        snapToNearest(liveTranslate.current);
+        const delta = e.pageX - startPointer.current;
+        snapToNearest(liveTranslate.current, delta);
     };
 
-    const onMouseLeave = () => {
+    const onMouseLeave = (e) => {
         if (isDragging.current) {
             isDragging.current = false;
-            snapToNearest(liveTranslate.current);
+            const delta = e.pageX - startPointer.current;
+            snapToNearest(liveTranslate.current, delta);
         }
     };
 
@@ -127,8 +158,9 @@ export default function ForexZeonfx({ data }) {
         setTranslate(clampWithBand(startTranslate.current + delta), false);
     };
 
-    const onTouchEnd = () => {
-        snapToNearest(liveTranslate.current);
+    const onTouchEnd = (e) => {
+        const delta = e.changedTouches[0].clientX - startPointer.current;
+        snapToNearest(liveTranslate.current, delta);
     };
 
     /* ══════════════════════════════════════════════════════════ */
@@ -191,9 +223,9 @@ export default function ForexZeonfx({ data }) {
 
                     {/* Right arrow */}
                     <button
-                        className={`${styles.arrow} ${styles.arrowRight} ${idx === MAX_IDX ? styles.arrowDisabled : ''}`}
+                        className={`${styles.arrow} ${styles.arrowRight} ${idx === maxIdx ? styles.arrowDisabled : ''}`}
                         onClick={() => goToIdx(idx + 1)}
-                        disabled={idx === MAX_IDX}
+                        disabled={idx === maxIdx}
                         aria-label="Next"
                     >
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -203,7 +235,7 @@ export default function ForexZeonfx({ data }) {
 
                     {/* Dots */}
                     <div className={styles.dots}>
-                        {Array.from({ length: MAX_IDX + 1 }).map((_, i) => (
+                        {Array.from({ length: maxIdx + 1 }).map((_, i) => (
                             <button
                                 key={i}
                                 className={`${styles.dot} ${idx === i ? styles.dotActive : ''}`}
