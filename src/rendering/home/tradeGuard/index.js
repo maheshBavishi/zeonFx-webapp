@@ -7,6 +7,7 @@ import HandIcon from '@/icons/handIcon';
 import CupIcon from '@/icons/cupIcon';
 import Button from '@/components/button';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 
 const containerVariants = {
@@ -68,7 +69,9 @@ export default function TradeGuard() {
                             so we built it into the account.
                         </motion.p>
                         <motion.div variants={itemVariants}>
-                            <Button primary text="Learn about Trade Guard" />
+                            <Link href='/tools'>
+                                <Button primary text="Learn about Trade Guard" />
+                            </Link>
                         </motion.div>
                     </div>
                 </motion.div>
