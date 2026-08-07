@@ -78,6 +78,10 @@
 
         video {
             max-width: 180px;
+
+            @include respond-to("sm") {
+                display: none;
+            }
         }
 
         h2 {
