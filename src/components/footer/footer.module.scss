@@ -3,12 +3,10 @@
 @use '../../scss/font/font.scss' as *;
 
 .footer {
-    margin-top: -100px;
     position: relative;
+    padding: 100px 0 0;
 
-    @include respond-to("sm") {
-        margin-top: -80px;
-    }
+
 
     .bottom {
         padding: 16px 0;
@@ -291,7 +289,8 @@
 }
 
 .footerimg {
-    video img {
+
+    video {
         display: block;
         width: 100%;
     }

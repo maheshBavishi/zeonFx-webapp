@@ -33,7 +33,8 @@ const itemVariants = {
 export default function TradeGuard() {
     return (
         <div className={styles.tradeGuard}>
-            <video src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785485015/0726_nihtbf.mp4' alt="Lock" loop muted autoPlay playsInline></video>
+            <video className={styles.mobileHide} src='https://res.cloudinary.com/izyjnpsh/video/upload/v1785485015/0726_nihtbf.mp4' alt="Lock" loop muted autoPlay playsInline></video>
+            <video className={styles.mobileShow} src='https://res.cloudinary.com/izyjnpsh/video/upload/v1786164758/0726_mxagdc.mp4' alt="Lock" loop muted autoPlay playsInline></video>
             <div className={styles.relative}>
                 <motion.div
                     className={styles.content}

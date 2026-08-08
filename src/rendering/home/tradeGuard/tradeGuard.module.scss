@@ -12,6 +12,20 @@
         object-position: right;
     }
 
+    .mobileHide {
+        @include respond-to("sm") {
+            display: none;
+        }
+    }
+
+    .mobileShow {
+        display: none;
+
+        @include respond-to("sm") {
+            display: block;
+        }
+    }
+
 
     .content {
         position: absolute;

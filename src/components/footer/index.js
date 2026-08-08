@@ -8,8 +8,7 @@ export default function Footer() {
     return (
         <>
             <div className={styles.footerimg}>
-                {/* <video src="https://res.cloudinary.com/izyjnpsh/video/upload/v1786087658/Characters_going_up_down_1080p_202608041249_gduerq.mp4" loop muted playsInline autoPlay></video> */}
-                <img src={FooterImage} alt='FooterImage' />
+                <video src="https://res.cloudinary.com/izyjnpsh/video/upload/v1786164767/0808_hwmmsb.mp4" loop muted playsInline autoPlay></video>
             </div>
             <footer className={styles.footer}>
                 <div className='container'>
